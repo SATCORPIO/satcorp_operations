@@ -164,9 +164,8 @@ const XOIAudit = () => {
 
   const stats = {
     total: SECTIONS.flatMap(s => s.features).length,
-    keep: Object.values(decisions).filter(v => v === 'KEEP').length,
+    future: Object.values(decisions).filter(v => v === 'FUTURE').length,
     cut: Object.values(decisions).filter(v => v === 'CUT').length,
-    expand: Object.values(decisions).filter(v => v === 'EXPAND').length,
     add: Object.values(decisions).filter(v => v === 'ADD').length,
     none: SECTIONS.flatMap(s => s.features).length - Object.values(decisions).filter(Boolean).length
   };
@@ -183,11 +182,12 @@ const XOIAudit = () => {
     const timestamp = new Date().toLocaleString();
     
     // Group decisions
-    const groups = { KEEP: [], EXPAND: [], ADD: [], CUT: [] };
+    const groups = { 'FUTURE FEATURE': [], ADD: [], CUT: [] };
     SECTIONS.forEach(sec => {
       sec.features.forEach(f => {
         const d = decisions[f.id];
-        if (d) groups[d].push(`${sec.name} → ${f.name}`);
+        if (d === 'FUTURE') groups['FUTURE FEATURE'].push(`${sec.name} → ${f.name}`);
+        else if (d) groups[d].push(`${sec.name} → ${f.name}`);
       });
     });
 
@@ -237,6 +237,16 @@ const XOIAudit = () => {
     }
   };
 
+  const ExportButton = ({ className = "" }) => (
+    <button 
+      onClick={exportDecisions}
+      disabled={submitting}
+      className={`bg-white text-black px-4 py-2 text-[10px] font-bold uppercase tracking-[0.2em] flex items-center gap-2 hover:bg-slate-200 transition-all stealth-shadow disabled:opacity-50 ${className}`}
+    >
+      {submitting ? 'Transmitting...' : <><Send className="w-3.5 h-3.5" /> Export Decisions</>}
+    </button>
+  );
+
   return (
     <Layout title="Feature Audit Board">
       <div className="p-4 md:p-8 max-w-7xl mx-auto space-y-8">
@@ -256,15 +266,7 @@ const XOIAudit = () => {
             </p>
           </div>
 
-          <div className="flex gap-4">
-            <button 
-              onClick={exportDecisions}
-              disabled={submitting}
-              className="bg-accent-red text-white px-8 py-3 text-[10px] font-bold uppercase tracking-[0.3em] flex items-center gap-3 hover:bg-red-800 transition-all stealth-shadow disabled:opacity-50"
-            >
-              {submitting ? 'Transmitting...' : <><Send className="w-4 h-4" /> Export Decisions</>}
-            </button>
-          </div>
+          <ExportButton />
         </section>
 
         {/* SUMMARY & FILTER BAR */}
@@ -276,12 +278,8 @@ const XOIAudit = () => {
             </div>
             <div className="w-[1px] h-8 bg-white/10 hidden sm:block"></div>
             <div className="flex flex-col">
-              <span className="text-[10px] font-mono text-accent-green uppercase tracking-widest">Keep</span>
-              <span className="text-2xl font-black text-accent-green">{stats.keep}</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="text-[10px] font-mono text-accent-blue uppercase tracking-widest">Expand</span>
-              <span className="text-2xl font-black text-accent-blue">{stats.expand}</span>
+              <span className="text-[10px] font-mono text-accent-blue uppercase tracking-widest">Future Feature</span>
+              <span className="text-2xl font-black text-accent-blue">{stats.future}</span>
             </div>
             <div className="flex flex-col">
               <span className="text-[10px] font-mono text-accent-amber uppercase tracking-widest">Add</span>
@@ -303,7 +301,7 @@ const XOIAudit = () => {
                 <Filter className="w-3 h-3" /> Filter Vector
              </div>
              <div className="flex flex-wrap gap-2">
-                {['ALL', 'KEEP', 'EXPAND', 'ADD', 'CUT', 'NONE'].map(f => (
+                {['ALL', 'FUTURE', 'ADD', 'CUT', 'NONE'].map(f => (
                   <button
                     key={f}
                     onClick={() => setFilter(f)}
@@ -313,7 +311,7 @@ const XOIAudit = () => {
                       : 'border-white/5 text-text-dim hover:border-white/20 hover:text-white'
                     }`}
                   >
-                    {f}
+                    {f === 'FUTURE' ? 'Future Feature' : f}
                   </button>
                 ))}
              </div>
@@ -353,10 +351,9 @@ const XOIAudit = () => {
                       <div 
                         key={feat.id}
                         className={`tactical-border glass-panel p-5 flex flex-col justify-between gap-6 group transition-all duration-300 ${
-                          status === 'KEEP' ? 'border-l-4 border-l-accent-green' :
-                          status === 'CUT' ? 'border-l-4 border-l-accent-red' :
-                          status === 'EXPAND' ? 'border-l-4 border-l-accent-blue' :
-                          status === 'ADD' ? 'border-l-4 border-l-accent-amber' :
+                          status === 'FUTURE' ? 'border-l-4 border-l-accent-blue bg-accent-blue/5' :
+                          status === 'CUT' ? 'border-l-4 border-l-accent-red bg-accent-red/5' :
+                          status === 'ADD' ? 'border-l-4 border-l-accent-amber bg-accent-amber/5' :
                           'border-l-4 border-l-transparent'
                         }`}
                       >
@@ -374,22 +371,21 @@ const XOIAudit = () => {
 
                         <div className="flex flex-wrap gap-2 pt-4 border-t border-white/5">
                           {[
-                            { id: 'KEEP', color: 'text-accent-green', border: 'border-accent-green/30', bg: 'bg-accent-green/5', icon: CheckCircle2 },
-                            { id: 'EXPAND', color: 'text-accent-blue', border: 'border-accent-blue/30', bg: 'bg-accent-blue/5', icon: Maximize2 },
-                            { id: 'ADD', color: 'text-accent-amber', border: 'border-accent-amber/30', bg: 'bg-accent-amber/5', icon: PlusCircle },
-                            { id: 'CUT', color: 'text-accent-red', border: 'border-accent-red/30', bg: 'bg-accent-red/5', icon: XCircle },
+                            { id: 'FUTURE', label: 'Future Feature', color: 'text-accent-blue', border: 'border-accent-blue/50', bg: 'bg-accent-blue', icon: Maximize2 },
+                            { id: 'ADD', label: 'Add', color: 'text-accent-amber', border: 'border-accent-amber/50', bg: 'bg-accent-amber', icon: PlusCircle },
+                            { id: 'CUT', label: 'Cut', color: 'text-accent-red', border: 'border-accent-red/50', bg: 'bg-accent-red', icon: XCircle },
                           ].map(btn => (
                             <button
                               key={btn.id}
                               onClick={() => handleDecide(feat.id, btn.id)}
-                              className={`flex-1 min-w-[70px] flex items-center justify-center gap-2 py-2 border text-[9px] font-bold uppercase tracking-wider transition-all ${
+                              className={`flex-1 min-w-[100px] flex items-center justify-center gap-2 py-2 border text-[9px] font-bold uppercase tracking-wider transition-all ${
                                 status === btn.id 
-                                ? `${btn.bg} ${btn.border} ${btn.color} shadow-[0_0_15px_rgba(0,0,0,0.5)]` 
-                                : `border-transparent text-text-dim hover:bg-white/5 hover:text-white`
+                                ? `${btn.bg} border-transparent text-black shadow-[0_0_20px_rgba(255,255,255,0.2)]` 
+                                : `border-white/10 text-text-dim hover:bg-white/5 hover:text-white`
                               }`}
                             >
                               <btn.icon className="w-3 h-3" />
-                              {btn.id}
+                              {btn.label}
                             </button>
                           ))}
                         </div>
@@ -401,6 +397,11 @@ const XOIAudit = () => {
             );
           })}
         </div>
+        
+        {/* BOTTOM EXPORT BUTTON */}
+        <section className="flex justify-center pt-8 border-t border-border-dim mt-12">
+          <ExportButton />
+        </section>
       </div>
     </Layout>
   );

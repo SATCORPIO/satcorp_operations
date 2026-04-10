@@ -16,7 +16,8 @@ import {
   ShieldAlert,
   Globe,
   Radio,
-  Layers
+  Layers,
+  Zap
 } from 'lucide-react';
 
 import telemetryBg from '../assets/telemetry-bg.png';
@@ -72,6 +73,17 @@ const AdminPortal = () => {
       color: 'text-accent-cyan',
       bg: intelligenceBg,
       vector: 'SEC-D2-AUDIT'
+    },
+    {
+      id: 'dualcore-900',
+      title: 'DualCore 900 Integrated System',
+      subtitle: 'DUAL-ENGINE POWER CELL',
+      description: '900kW Dual-engine factory-integrated enclosure. Zero-risk parallel engineering.',
+      route: '/dualcore-900',
+      icon: Zap,
+      color: 'text-cyan-400',
+      bg: syncBg,
+      vector: 'SEC-E5-DUAL'
     }
   ];
 

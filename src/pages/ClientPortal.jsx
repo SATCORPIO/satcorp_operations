@@ -3,7 +3,7 @@ import Layout from '../components/Layout';
 import { useAuth } from '../context/AuthContext';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { Activity, FileText, Cpu, ArrowRight, ShieldCheck, Download, Layers } from 'lucide-react';
+import { Activity, FileText, Cpu, ArrowRight, ShieldCheck, Download, Layers, Zap } from 'lucide-react';
 
 import telemetryBg from '../assets/telemetry-bg.png';
 import syncBg from '../assets/sync-bg.png';
@@ -54,6 +54,16 @@ const ClientPortal = () => {
       color: 'text-accent-cyan',
       bg: intelligenceBg,
       vector: 'VEC-D2-AUDIT'
+    },
+    'dualcore-900': {
+      title: 'DualCore 900 Integrated System',
+      subtitle: 'DUAL-ENGINE POWER CELL',
+      description: 'Dual Cummins QSX15-G9 factory-integrated enclosure. 900kW Standby / 820kW Prime.',
+      route: '/dualcore-900',
+      icon: Zap,
+      color: 'text-accent-cyan',
+      bg: syncBg,
+      vector: 'VEC-E5-DUAL'
     }
   };
 

@@ -10,6 +10,7 @@ import GenDashV2 from './pages/projects/GenDashV2';
 import Par450k from './pages/projects/450kPar';
 import XOIClient from './pages/projects/XOIClient';
 import XOIAudit from './pages/projects/XOIAudit';
+import DualCore900 from './pages/projects/dualcore-900';
 
 const ProtectedRoute = ({ children, roles = [] }) => {
   const { user, loading } = useAuth();
@@ -63,6 +64,12 @@ function App() {
         <Route path="/xoi-audit" element={
           <ProtectedRoute>
             <XOIAudit />
+          </ProtectedRoute>
+        } />
+
+        <Route path="/dualcore-900" element={
+          <ProtectedRoute>
+            <DualCore900 />
           </ProtectedRoute>
         } />
         

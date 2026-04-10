@@ -7,13 +7,13 @@ export const USERS = {
     username: 'ANU@satcorp.io',
     password: 'Hess1862$',
     role: 'admin',
-    projects: ['gendashv2', '450kpar', 'xoi-client', 'xoi-audit']
+    projects: ['gendashv2', '450kpar', 'xoi-client', 'xoi-audit', 'dualcore-900']
   },
   ISS: {
     username: 'ISS@satcorp.io',
     password: 'Muscleman320$',
     role: 'client',
-    projects: ['gendashv2', '450kpar']
+    projects: ['gendashv2', '450kpar', 'dualcore-900']
   },
   DYSUN: {
     username: 'Dysun@satcorp.io',
