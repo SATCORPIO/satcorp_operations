@@ -421,14 +421,11 @@ function IntSLD({mode}){
       <rect x="310"y="220"width="62"height="30"fill="#0a1828"stroke="#3090f0"strokeWidth="2"/>
       <text x="341"y="233"textAnchor="middle"fill="#3090f0"fontSize="7"fontFamily="'JetBrains Mono'"fontWeight="700">INT BUS</text>
       <text x="341"y="244"textAnchor="middle"fill="#1a3870"fontSize="6"fontFamily="'JetBrains Mono'">480V 2kA</text>
-
       {/* AUTO-SYNC module inside */}
-      <rect x="290"y="170"width="100"height="36"fill="#080820"stroke="#9040e0"strokeWidth="1.5"rx="2"/>
-      <text x="340"y="184"textAnchor="middle"fill="#9040e0"fontSize="7"fontFamily="'JetBrains Mono'"fontWeight="700">DIGITAL AUTO-SYNC</text>
-      <text x="340"y="196"textAnchor="middle"fill="#602090"fontSize="5"fontFamily="'JetBrains Mono'">Factory calibrated · No trim</text>
-      <text x="340"y="206"textAnchor="middle"fill="#602090"fontSize="5"fontFamily="'JetBrains Mono'">No phase reversal possible</text>
-
-      {/* Bus to output load breaker — outside enclosure */}
+      <rect x="290"y="164"width="100"height="36"fill="#080820"stroke="#9040e0"strokeWidth="1.5"rx="2"/>
+      <text x="340"y="178"textAnchor="middle"fill="#9040e0"fontSize="7"fontFamily="'JetBrains Mono'"fontWeight="700">DIGITAL AUTO-SYNC</text>
+      <text x="340"y="190"textAnchor="middle"fill="#602090"fontSize="5"fontFamily="'JetBrains Mono'">Factory calibrated · No trim</text>
+      <text x="340"y="200"textAnchor="middle"fill="#602090"fontSize="5"fontFamily="'JetBrains Mono'">No phase reversal possible</text>
       <line x1="372"y1="235"x2="685"y2="235"stroke="#3090f0"strokeWidth="3"strokeDasharray="9,4"strokeDashoffset={-off}markerEnd="url(#aBU)"/>
 
       {/* OUTPUT BREAKER — external (moved left for visibility) */}
