@@ -30,9 +30,9 @@ const AdminPortal = () => {
   const projectCards = [
     {
       id: 'gendashv2',
-      title: '50kW Diesel System Dashboard',
+      title: '450kW Diesel System Dashboard',
       subtitle: 'SYSTEM TELEMETRY v2.1',
-      description: 'Perkins/John Deere Technical Data Sheet & Real-time Telemetry v2',
+      description: 'Cummins QSX15-G9 Technical Data Sheet & Real-time Telemetry v2',
       route: '/gendashv2',
       icon: Activity,
       color: 'text-accent-red',
@@ -40,11 +40,11 @@ const AdminPortal = () => {
       vector: 'SEC-A1-GEN'
     },
     {
-      id: '50kpar',
+      id: '450kpar',
       title: 'Dual-Generator Parallel Hub',
       subtitle: 'SYNCHRO-LINK COMMAND',
-      description: 'Synchronization & Load-Sharing Synchronization Engineering Control',
-      route: '/50kpar',
+      description: '450kW Synchronization & Load-Sharing Engineering Control',
+      route: '/450kpar',
       icon: Cpu,
       color: 'text-accent-blue',
       bg: syncBg,
@@ -72,16 +72,16 @@ const AdminPortal = () => {
 
   return (
     <Layout title="Strategic Operations Center">
-      <div className="p-8 max-w-7xl mx-auto space-y-16">
+      <div className="p-4 md:p-8 max-w-7xl mx-auto space-y-10 md:space-y-16">
         
         {/* PROJECT GRID - FOLDER DESIGN */}
         <section>
-          <div className="flex items-center gap-6 mb-12">
-            <h2 className="text-[11px] font-mono uppercase tracking-[0.5em] text-white flex items-center gap-3">
+          <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6 mb-8 md:mb-12">
+            <h2 className="text-[10px] md:text-[11px] font-mono uppercase tracking-[0.3em] md:tracking-[0.5em] text-white flex items-center gap-3">
               <span className="w-2 h-2 bg-accent-red animate-pulse"></span>
               Strategic Operations Matrix
             </h2>
-            <div className="flex-1 h-[1px] bg-gradient-to-r from-border-dim to-transparent opacity-30"></div>
+            <div className="hidden md:block flex-1 h-[1px] bg-gradient-to-r from-border-dim to-transparent opacity-30"></div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -139,10 +139,10 @@ const AdminPortal = () => {
         </section>
 
         {/* INTERACTIVE TACTICAL SECTION - COMMAND CENTER REDESIGN */}
-        <section className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <section className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
           
           {/* MULTI-VECTOR TACTICAL MAP */}
-          <div className="lg:col-span-8 tactical-border glass-panel overflow-hidden h-[550px] relative flex flex-col group/map shadow-[0_0_50px_rgba(0,0,0,0.8)]">
+          <div className="lg:col-span-8 tactical-border glass-panel overflow-hidden h-[350px] md:h-[550px] relative flex flex-col group/map shadow-[0_0_50px_rgba(0,0,0,0.8)]">
             <div className="p-5 border-b border-border-dim bg-white/5 flex justify-between items-center relative z-10 transition-colors group-hover/map:bg-white/10">
               <div className="flex items-center gap-4">
                 <div className="w-2 h-2 bg-accent-red rounded-full animate-ping"></div>
@@ -230,7 +230,7 @@ const AdminPortal = () => {
                     initial={{ opacity: 0, scale: 0.9, x: 20 }}
                     animate={{ opacity: 1, scale: 1, x: 0 }}
                     exit={{ opacity: 0, scale: 0.9, x: 20 }}
-                    className="absolute top-10 right-10 w-72 bg-black/95 border-l-4 border-accent-red p-6 z-40 stealth-shadow font-mono backdrop-blur-xl"
+                    className="absolute top-2 right-2 left-2 md:left-auto md:top-10 md:right-10 md:w-72 bg-black/95 border-l-4 border-accent-red p-4 md:p-6 z-40 stealth-shadow font-mono backdrop-blur-xl"
                    >
                      <div className="flex justify-between items-start mb-6">
                        <div className="text-[11px] text-accent-red uppercase tracking-[0.3em] font-black glow-text-red">Vector Intelligence</div>
@@ -273,9 +273,9 @@ const AdminPortal = () => {
           </div>
 
           {/* RIGHT COLUMN: RADAR & COMMUNICATIONS */}
-          <div className="lg:col-span-4 space-y-10">
+          <div className="lg:col-span-4 space-y-8 lg:space-y-10">
             {/* ENHANCED THREAT ASSESSMENT RADAR */}
-            <div className="tactical-border glass-panel p-8 h-[260px] relative overflow-hidden flex flex-col items-center justify-center group/radar shadow-[0_0_30px_rgba(0,0,0,0.5)]">
+            <div className="tactical-border glass-panel p-6 md:p-8 h-auto min-h-[260px] relative overflow-hidden flex flex-col items-center justify-center group/radar shadow-[0_0_30px_rgba(0,0,0,0.5)]">
               <div className="absolute top-4 left-6 flex items-center gap-3">
                 <ShieldAlert className={`w-4 h-4 text-accent-red ${activeNode?.alert ? 'animate-bounce' : 'animate-pulse'}`} />
                 <span className="text-[11px] font-mono text-white font-black uppercase tracking-[0.4em]">Threat Pulse Matrix</span>
@@ -309,7 +309,7 @@ const AdminPortal = () => {
             </div>
 
             {/* ENHANCED LIVE SIGNAL INTERCEPT LOG */}
-            <div className="tactical-border glass-panel h-[250px] bg-gradient-to-br from-[#0a0a0a] to-[#1a0a0e] flex flex-col shadow-[0_0_30px_rgba(225,29,72,0.1)]">
+            <div className="tactical-border glass-panel h-[300px] bg-gradient-to-br from-[#0a0a0a] to-[#1a0a0e] flex flex-col shadow-[0_0_30px_rgba(225,29,72,0.1)]">
                <div className="p-4 border-b border-white/5 bg-black/40 flex justify-between items-center">
                   <div className="flex items-center gap-3">
                     <Radio className="w-4 h-4 text-accent-red animate-pulse" />

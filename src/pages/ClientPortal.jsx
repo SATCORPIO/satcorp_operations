@@ -16,20 +16,20 @@ const ClientPortal = () => {
 
   const allProjects = {
     gendashv2: {
-      title: '50kW Diesel System Dashboard',
+      title: '450kW Diesel System Dashboard',
       subtitle: 'SYSTEM TELEMETRY',
-      description: 'Perkins/John Deere Technical Data Sheet & Real-time Telemetry v2',
+      description: 'Cummins QSX15-G9 Technical Data Sheet & Real-time Telemetry v2',
       route: '/gendashv2',
       icon: Activity,
       color: 'text-accent-red',
       bg: telemetryBg,
       vector: 'VEC-A1-GEN'
     },
-    '50kpar': {
+    '450kpar': {
       title: 'Dual-Generator Parallel Hub',
       subtitle: 'SYNCHRO-LINK COMMAND',
-      description: 'Synchronization & Load-Sharing Synchronization Engineering Control',
-      route: '/50kpar',
+      description: '450kW Synchronization & Load-Sharing Engineering Control',
+      route: '/450kpar',
       icon: Cpu,
       color: 'text-accent-blue',
       bg: syncBg,
@@ -51,7 +51,7 @@ const ClientPortal = () => {
 
   return (
     <Layout title="Operative Internal Terminal">
-      <div className="p-8 max-w-7xl mx-auto space-y-12">
+      <div className="p-4 md:p-8 max-w-7xl mx-auto space-y-8 md:space-y-12">
         {/* WELCOME SECTION */}
         <section className="flex flex-col md:flex-row justify-between items-start md:items-end gap-10 pb-10 border-b border-border-dim relative overflow-hidden">
           <div className="z-10">
@@ -59,7 +59,7 @@ const ClientPortal = () => {
               <ShieldCheck className="w-4 h-4" />
               Authenticated Session Active // Layer 4 Encryption
             </div>
-            <h1 className="text-5xl font-black tracking-tighter text-white uppercase italic">
+            <h1 className="text-3xl md:text-5xl font-black tracking-tighter text-white uppercase italic">
               Welcome, <span className="text-accent-red glow-text-red">Operative {user?.username?.split('@')[0]}</span>
             </h1>
             <p className="text-text-secondary font-mono text-[10px] mt-4 uppercase tracking-[0.3em] max-w-2xl leading-relaxed">
@@ -67,7 +67,7 @@ const ClientPortal = () => {
             </p>
           </div>
           
-          <div className="flex items-center gap-6 bg-accent-red/5 tactical-border p-6 stealth-shadow min-w-[280px]">
+          <div className="flex items-center gap-6 bg-accent-red/5 tactical-border p-6 stealth-shadow w-full md:min-w-[280px]">
             <Clock className="w-6 h-6 text-accent-red pulse-red" />
             <div className="font-mono">
               <p className="text-[9px] text-text-dim uppercase tracking-[0.3em] mb-1">Authorization Expiry</p>
@@ -117,7 +117,7 @@ const ClientPortal = () => {
                   </div>
                 </div>
 
-                <div className="p-10 flex flex-col h-full relative z-10">
+                <div className="p-6 md:p-10 flex flex-col h-full relative z-10">
                   <div className="flex justify-between items-start mb-8">
                     <div className="p-4 bg-black/60 border border-white/10 group-hover:border-accent-red transition-all stealth-shadow">
                       <project.icon className={`w-10 h-10 ${project.color} group-hover:text-accent-red glow-text-red`} />
@@ -129,7 +129,7 @@ const ClientPortal = () => {
                     </div>
                   </div>
 
-                  <h3 className="text-4xl font-black text-white group-hover:text-accent-red transition-colors mb-4 tracking-tighter uppercase italic">
+                  <h3 className="text-2xl md:text-4xl font-black text-white group-hover:text-accent-red transition-colors mb-4 tracking-tighter uppercase italic">
                     {project.title}
                   </h3>
                   <p className="text-[11px] text-text-secondary mb-12 leading-relaxed font-mono uppercase tracking-wide opacity-80">
@@ -138,7 +138,7 @@ const ClientPortal = () => {
 
                   <div className="mt-auto pt-8 border-t border-white/5 flex justify-between items-center text-white">
                     <button 
-                      className="bg-accent-red text-white px-10 py-3 text-[11px] font-bold uppercase tracking-[0.4em] flex items-center gap-3 hover:bg-red-800 transition-all relative overflow-hidden group/btn"
+                      className="bg-accent-red text-white px-6 md:px-10 py-3 text-[11px] font-bold uppercase tracking-[0.4em] flex items-center gap-3 hover:bg-red-800 transition-all relative overflow-hidden group/btn"
                     >
                       <div className="absolute inset-0 bg-white/20 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700"></div>
                       Establish Link <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />

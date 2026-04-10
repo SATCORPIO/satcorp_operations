@@ -1,16 +1,16 @@
 import React, { useEffect } from 'react';
-import { 
-  Shield, 
-  Settings, 
-  Activity, 
-  Database, 
-  Terminal, 
-  ChevronRight, 
-  Cpu, 
-  FileText, 
-  Layers, 
-  Zap, 
-  BarChart4 
+import {
+  Shield,
+  Settings,
+  Activity,
+  Database,
+  Terminal,
+  ChevronRight,
+  Cpu,
+  FileText,
+  Layers,
+  Zap,
+  BarChart4
 } from 'lucide-react';
 
 const XOIClient = () => {
@@ -33,7 +33,7 @@ const XOIClient = () => {
 
   const handleSubmit = (e) => {
     if (e) e.preventDefault();
-    alert('Thank you — your questionnaire has been submitted. We\'ll be in touch within 2 business days.');
+    alert('Thank you your questionnaire has been submitted. We\'ll be in touch within 2 business days.');
   };
 
   return (
@@ -566,7 +566,7 @@ const XOIClient = () => {
         {/* INTRO */}
         <div className="intro">
           <p>Thank you for considering this engagement. This questionnaire is designed to give us a complete picture of your business operations, technical environment, and product vision before we begin development.</p>
-          <p>Your answers directly shape the architecture, feature prioritisation, and timeline of the platform. There are no wrong answers — <strong>the more detail you provide, the more precisely we can build what you actually need.</strong> Please complete all sections at your own pace. This typically takes 25–40 minutes.</p>
+          <p>Your answers directly shape the architecture, feature prioritisation, and timeline of the platform. There are no wrong answers <strong>the more detail you provide, the more precisely we can build what you actually need.</strong> Please complete all sections at your own pace. This typically takes 25–40 minutes.</p>
         </div>
 
         {/* SECTION 1: COMPANY & OPERATIONS */}
@@ -580,7 +580,7 @@ const XOIClient = () => {
           <div className="question-block">
             <div className="q-num">Q1.1</div>
             <div className="q-text">What is your company name, and what industry/trade does your field service team operate in?</div>
-            <textarea placeholder="e.g. Apex HVAC Services — commercial HVAC installation, maintenance, and repair across the Southeast..."></textarea>
+            <textarea placeholder="e.g. Apex HVAC Services commercial HVAC installation, maintenance, and repair across the Southeast..."></textarea>
           </div>
 
           <div className="question-block">
@@ -604,7 +604,7 @@ const XOIClient = () => {
 
           <div className="question-block">
             <div className="q-num">Q1.4</div>
-            <div className="q-text">Describe your current job workflow — from dispatch to job completion to invoicing.</div>
+            <div className="q-text">Describe your current job workflow from dispatch to job completion to invoicing.</div>
             <div className="q-hint">Walk us through what happens step by step today, even if the process is manual or messy.</div>
             <textarea style={{ minHeight: '120px' }} placeholder="e.g. Dispatcher receives call → enters work order in ServiceTitan → assigns to tech via app → tech travels, does job, takes photos..."></textarea>
           </div>
@@ -688,14 +688,14 @@ const XOIClient = () => {
               <label className="opt-label"><input type="radio" name="current-tool" /> <span>No — this is new territory</span></label>
             </div>
             <div style={{ marginTop: '10px' }}>
-              <textarea placeholder="If yes — what do you like and dislike about your current tool?"></textarea>
+              <textarea placeholder="If yes what do you like and dislike about your current tool?"></textarea>
             </div>
           </div>
 
           <div className="question-block">
             <div className="q-num">Q2.3</div>
             <div className="q-text">Which systems would the new platform need to integrate with?</div>
-            <div className="q-hint">Check all that apply — we'll plan integration architecture around your stack.</div>
+            <div className="q-hint">Check all that apply we'll plan integration architecture around your stack.</div>
             <div className="options-grid cols-2">
               <label className="opt-label"><input type="checkbox" /> <span>ServiceTitan (jobs, dispatch)</span></label>
               <label className="opt-label"><input type="checkbox" /> <span>QuickBooks / Xero (accounting)</span></label>
@@ -731,7 +731,7 @@ const XOIClient = () => {
           <div className="question-block">
             <div className="q-num">Q2.6</div>
             <div className="q-text">What is your current biggest technology frustration in day-to-day field operations?</div>
-            <textarea style={{ minHeight: '100px' }} placeholder="Be specific — the more honest you are here, the better we can solve the root problem..."></textarea>
+            <textarea style={{ minHeight: '100px' }} placeholder="Be specific the more honest you are here, the better we can solve the root problem..."></textarea>
           </div>
         </div>
 
@@ -788,7 +788,7 @@ const XOIClient = () => {
 
           <div className="question-block">
             <div className="q-num">Q3.2</div>
-            <div className="q-text">Walk us through what a perfect job flow looks like in the new app — from a technician's perspective.</div>
+            <div className="q-text">Walk us through what a perfect job flow looks like in the new app from a technician's perspective.</div>
             <div className="q-hint">Step by step. What does the tech see first? What do they do? What should happen automatically?</div>
             <textarea style={{ minHeight: '140px' }} placeholder="e.g. Tech opens app → sees today's jobs sorted by priority → taps job → sees customer info and asset history → scans dataplate on arrival → follows workflow steps..."></textarea>
           </div>
@@ -813,7 +813,7 @@ const XOIClient = () => {
           <div className="question-block">
             <div className="q-num">Q3.5</div>
             <div className="q-text">Do you want the platform to support in-field quoting or upsell prompts?</div>
-            <div className="q-hint">e.g. App alerts tech: "This unit is 14 years old — prompt customer for replacement quote"</div>
+            <div className="q-hint">e.g. App alerts tech: "This unit is 14 years old prompt customer for replacement quote"</div>
             <div className="options-grid cols-2">
               <label className="opt-label"><input type="radio" name="upsell" /> <span>Yes — this is a core use case</span></label>
               <label className="opt-label"><input type="radio" name="upsell" /> <span>Yes — but secondary to documentation</span></label>
@@ -849,7 +849,7 @@ const XOIClient = () => {
             <div className="q-num">Q3.8</div>
             <div className="q-text">Describe your ideal workflow builder experience for the back office team.</div>
             <div className="q-hint">Who builds workflows? How complex do they get? What frustrates you about how it works today?</div>
-            <textarea placeholder="e.g. Service manager builds them — usually 10–20 steps with branching based on what the tech finds. Biggest frustration: in XOi you have to open a new workflow for every branch, which confuses techs..."></textarea>
+            <textarea placeholder="e.g. Service manager builds them usually 10–20 steps with branching based on what the tech finds. Biggest frustration: in XOi you have to open a new workflow for every branch, which confuses techs..."></textarea>
           </div>
 
           <div className="question-block">

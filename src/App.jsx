@@ -7,7 +7,7 @@ import LoginPage from './pages/LoginPage';
 import AdminPortal from './pages/AdminPortal';
 import ClientPortal from './pages/ClientPortal';
 import GenDashV2 from './pages/projects/GenDashV2';
-import Par50k from './pages/projects/50kPar';
+import Par450k from './pages/projects/450kPar';
 import XOIClient from './pages/projects/XOIClient';
 
 const ProtectedRoute = ({ children, roles = [] }) => {
@@ -47,9 +47,9 @@ function App() {
           </ProtectedRoute>
         } />
         
-        <Route path="/50kpar" element={
+        <Route path="/450kpar" element={
           <ProtectedRoute>
-            <Par50k />
+            <Par450k />
           </ProtectedRoute>
         } />
         
