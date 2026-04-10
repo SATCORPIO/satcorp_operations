@@ -15,7 +15,8 @@ import {
   Map as MapIcon, 
   ShieldAlert,
   Globe,
-  Radio
+  Radio,
+  Layers
 } from 'lucide-react';
 
 import telemetryBg from '../assets/telemetry-bg.png';
@@ -60,6 +61,17 @@ const AdminPortal = () => {
       color: 'text-accent-green',
       bg: xoiBg,
       vector: 'SEC-C9-INTEL'
+    },
+    {
+      id: 'xoi-audit',
+      title: 'XOi Feature Audit Board',
+      subtitle: 'STRATEGIC APPRAISAL',
+      description: 'Internal assessment and viability audit for XOi platform features.',
+      route: '/xoi-audit',
+      icon: Layers,
+      color: 'text-accent-cyan',
+      bg: intelligenceBg,
+      vector: 'SEC-D2-AUDIT'
     }
   ];
 
