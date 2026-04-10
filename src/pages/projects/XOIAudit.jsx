@@ -301,19 +301,29 @@ const XOIAudit = () => {
                 <Filter className="w-3 h-3" /> Filter Vector
              </div>
              <div className="flex flex-wrap gap-2">
-                {['ALL', 'FUTURE', 'ADD', 'CUT', 'NONE'].map(f => (
-                  <button
-                    key={f}
-                    onClick={() => setFilter(f)}
-                    className={`px-3 py-1.5 text-[9px] font-bold uppercase tracking-wider border transition-all ${
-                      filter === f 
-                      ? 'bg-white/10 border-white text-white' 
-                      : 'border-white/5 text-text-dim hover:border-white/20 hover:text-white'
-                    }`}
-                  >
-                    {f === 'FUTURE' ? 'Future Feature' : f}
-                  </button>
-                ))}
+                {['ALL', 'FUTURE', 'ADD', 'CUT', 'NONE'].map(f => {
+                  const isActive = filter === f;
+                  const colorMap = {
+                    'FUTURE': 'border-accent-blue text-accent-cyan bg-accent-blue/10',
+                    'ADD': 'border-accent-amber text-accent-amber bg-accent-amber/10',
+                    'CUT': 'border-accent-red text-accent-red bg-accent-red/10',
+                    'ALL': 'border-white text-white bg-white/10',
+                    'NONE': 'border-text-dim text-white bg-white/5'
+                  };
+                  return (
+                    <button
+                      key={f}
+                      onClick={() => setFilter(f)}
+                      className={`px-3 py-1.5 text-[9px] font-black uppercase tracking-widest border transition-all ${
+                        isActive 
+                        ? colorMap[f] || 'border-white text-white bg-white/10'
+                        : 'border-white/5 text-text-dim hover:border-white/20 hover:text-white opacity-60'
+                      }`}
+                    >
+                      {f === 'FUTURE' ? 'Future Feature' : f}
+                    </button>
+                  );
+                })}
              </div>
           </div>
         </div>
@@ -350,11 +360,11 @@ const XOIAudit = () => {
                     return (
                       <div 
                         key={feat.id}
-                        className={`tactical-border glass-panel p-5 flex flex-col justify-between gap-6 group transition-all duration-300 ${
-                          status === 'FUTURE' ? 'border-l-4 border-l-accent-blue bg-accent-blue/5' :
-                          status === 'CUT' ? 'border-l-4 border-l-accent-red bg-accent-red/5' :
-                          status === 'ADD' ? 'border-l-4 border-l-accent-amber bg-accent-amber/5' :
-                          'border-l-4 border-l-transparent'
+                        className={`tactical-border glass-panel p-5 flex flex-col justify-between gap-6 group transition-all duration-500 scale-[1.01] ${
+                          status === 'FUTURE' ? 'border-accent-blue/50 bg-accent-blue/10 shadow-[0_0_30px_rgba(6,182,212,0.2)] ring-1 ring-accent-blue/40 !border-l-accent-blue border-l-4' :
+                          status === 'CUT' ? 'border-accent-red/50 bg-accent-red/10 shadow-[0_0_30px_rgba(225,29,72,0.2)] ring-1 ring-accent-red/40 !border-l-accent-red border-l-4' :
+                          status === 'ADD' ? 'border-accent-amber/50 bg-accent-amber/10 shadow-[0_0_30px_rgba(245,158,11,0.2)] ring-1 ring-accent-amber/40 !border-l-accent-amber border-l-4' :
+                          'border-white/5 border-l-4 border-l-transparent opacity-80 hover:opacity-100 hover:scale-[1.02]'
                         }`}
                       >
                         <div className="space-y-2">
@@ -378,10 +388,12 @@ const XOIAudit = () => {
                             <button
                               key={btn.id}
                               onClick={() => handleDecide(feat.id, btn.id)}
-                              className={`flex-1 min-w-[100px] flex items-center justify-center gap-2 py-2 border text-[9px] font-bold uppercase tracking-wider transition-all ${
+                              className={`flex-1 min-w-[100px] flex items-center justify-center gap-2 py-2.5 border text-[9px] font-black uppercase tracking-[0.2em] transition-all duration-300 ${
                                 status === btn.id 
-                                ? `${btn.bg} border-transparent text-black shadow-[0_0_20px_rgba(255,255,255,0.2)]` 
-                                : `border-white/10 text-text-dim hover:bg-white/5 hover:text-white`
+                                ? `${btn.bg} border-white text-black shadow-[0_0_25px_rgba(255,255,255,0.3)] scale-105 z-10` 
+                                : status 
+                                  ? `border-white/5 text-text-dim/50 opacity-30 grayscale pointer-events-none`
+                                  : `border-white/10 text-text-dim hover:border-white/30 hover:text-white`
                               }`}
                             >
                               <btn.icon className="w-3 h-3" />
