@@ -3,7 +3,6 @@ import { useAuth } from '../context/AuthContext';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { LogOut, Home, Shield, User, ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
-import SessionTimer from './SessionTimer';
 
 const Layout = ({ children, title = 'OPERATION CENTER' }) => {
   const { user, logout } = useAuth();
@@ -26,7 +25,7 @@ const Layout = ({ children, title = 'OPERATION CENTER' }) => {
   const isPortal = location.pathname === '/admin' || location.pathname === '/portal';
 
   return (
-    <div className="min-h-screen bg-black text-white font-sans flex flex-col relative overflow-hidden">
+    <div className="min-h-screen bg-black text-white font-sans flex flex-col relative">
       {/* HUD HEADER */}
       <header className="h-16 md:h-20 border-b border-border-dim bg-black/80 flex items-center justify-between px-4 md:px-8 sticky top-0 z-50 glass-panel">
         <div className="flex items-center gap-6">
@@ -57,14 +56,7 @@ const Layout = ({ children, title = 'OPERATION CENTER' }) => {
             </div>
           </div>
         </div>
-
-
-        <div className="flex items-center gap-4 md:gap-8">
-          <div className="hidden lg:block">
-            <SessionTimer variant="compact" />
-          </div>
-
-          <div className="hidden md:flex flex-col items-end">
+        <div className="flex items-center gap-4 md:gap-8">          <div className="hidden md:flex flex-col items-end">
             <div className="flex items-center gap-2 text-[10px] font-mono text-accent-blue uppercase tracking-[0.2em] glow-text-cyan">
               <User className="w-3 h-3" />
               {user?.username}

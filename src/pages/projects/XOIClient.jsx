@@ -12,7 +12,6 @@ import {
   Zap,
   BarChart4
 } from 'lucide-react';
-import SessionTimer from '../../components/SessionTimer';
 
 const XOIClient = () => {
   const [submitting, setSubmitting] = useState(false);
@@ -246,14 +245,19 @@ const XOIClient = () => {
 
         /* HEADER */
         .doc-header {
-          padding-bottom: 48px;
+          padding-top: 24px;
+          padding-bottom: 24px;
           margin-bottom: 56px;
           border-bottom: 1px solid var(--border);
           display: flex;
           justify-content: space-between;
           align-items: flex-end;
           gap: 24px;
-          position: relative;
+          position: sticky;
+          top: 0;
+          z-index: 100;
+          background: var(--glass);
+          backdrop-filter: blur(10px);
         }
 
         .doc-header::after {
@@ -723,7 +727,6 @@ const XOIClient = () => {
               <div><strong>Document</strong> · FSP-DQ-001</div>
               <div><strong>Version</strong> · 1.0</div>
               <div className="mt-2">
-                <SessionTimer variant="compact" />
               </div>
             </div>
           </div>

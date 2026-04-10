@@ -4,7 +4,6 @@ import { useAuth } from '../context/AuthContext';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { Activity, FileText, Cpu, ArrowRight, ShieldCheck, Download } from 'lucide-react';
-import SessionTimer from '../components/SessionTimer';
 
 import telemetryBg from '../assets/telemetry-bg.png';
 import syncBg from '../assets/sync-bg.png';
@@ -67,8 +66,6 @@ const ClientPortal = () => {
               Tactical authorization established. Deploying <span className="text-white">{myProjects.length} strategic assets</span> to your terminal. Verify metadata before initialization.
             </p>
           </div>
-          
-           <SessionTimer className="md:min-w-[280px]" />
         </section>
 
         {/* ASSIGNED PROJECTS */}
