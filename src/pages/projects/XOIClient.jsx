@@ -13,6 +13,7 @@ import {
   BarChart4
 } from 'lucide-react';
 
+const XOIClient = () => {
   const [submitting, setSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     // Section 1

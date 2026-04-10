@@ -662,7 +662,7 @@ export default function App() {
                       <tr><td>Link type</td><td>2-wire analog PCC3300-to-PCC3300</td></tr>
                       <tr><td>kW share accuracy</td><td>±5% of rated</td></tr>
                       <tr><td>kVAR share</td><td>Optional cross-current CT</td></tr>
-                      <tr><td>Load demand start</td><td>Gen 2 auto-starts > 80% Gen 1 prime</td></tr>
+                      <tr><td>Load demand start</td><td>Gen 2 auto-starts &gt; 80% Gen 1 prime</td></tr>
                       <tr><td>Load demand stop</td><td>Configurable unload threshold</td></tr>
                       <tr className="hr"><td colSpan="2">BREAKER CONTROL</td></tr>
                       <tr><td>CB close relay</td><td>PCC3300 digital output (24V or relay)</td></tr>
@@ -681,7 +681,7 @@ export default function App() {
                       <tr className="rc"><td>Gen 1 neutral (primary)</td><td>BONDED at Gen 1 frame</td></tr>
                       <tr className="gc"><td>Gen 2 neutral (secondary)</td><td>FLOATING — bond removed</td></tr>
                       <tr><td>System ground point</td><td>Paralleling switchgear ground bus</td></tr>
-                      <tr><td>GFP requirement (NEC 230.95)</td><td>Required — service > 1,000A at 480V</td></tr>
+                      <tr><td>GFP requirement (NEC 230.95)</td><td>Required — service &gt; 1,000A at 480V</td></tr>
                       <tr><td>GFP trip setting</td><td>1,200A max, 1s delay max per NEC</td></tr>
                       <tr><td>PCC3300 parallel card</td><td>Auto-handles neutral isolation on CB2</td></tr>
                     </tbody>
