@@ -869,7 +869,7 @@ export default function App(){
                   <tbody>
                     <tr><td>Type</td><td>Digital integrated — not relay-based</td></tr>
                     <tr><td>Method</td><td>Master PCC3300 ramps E2 governor and AVR to match bus</td></tr>
-                    <tr><td>Sync window</td><td>ΔV < 2%, Δf < 0.1 Hz, Δφ < 5° — factory tight</td></tr>
+                    <tr><td>Sync window</td><td>ΔV &lt; 2%, Δf &lt; 0.1 Hz, Δφ &lt; 5° — factory tight</td></tr>
                     <tr><td>Close time</td><td>CB2 close coil energized at 11 o'clock — auto</td></tr>
                     <tr><td>Phase check</td><td>Hardwired — physically impossible to swap via software</td></tr>
                     <tr><td>Sync timeout</td><td>60s max — fault and alarm if not achieved</td></tr>
@@ -987,7 +987,7 @@ export default function App(){
                       <tr className="hr"><td colSpan="2">N+1 FAILURE SCENARIOS</td></tr>
                       <tr><td>E1 trips — E2 survives</td><td style={{color:"var(--OK)"}}>450kW available. Instant. Zero interruption.</td></tr>
                       <tr><td>E2 trips — E1 survives</td><td style={{color:"var(--OK)"}}>450kW available. Instant. Zero interruption.</td></tr>
-                      <tr><td>Load > 450kW on one engine</td><td style={{color:"var(--WN)"}}>Master controller auto-sheds non-critical loads</td></tr>
+                      <tr><td>Load &gt; 450kW on one engine</td><td style={{color:"var(--WN)"}}>Master controller auto-sheds non-critical loads</td></tr>
                       <tr><td>Common fuel system fail</td><td style={{color:"var(--WN)"}}>External fuel bypass inlet standard equipment</td></tr>
                       <tr><td>Common cooling fail</td><td style={{color:"var(--WN)"}}>Each engine has independent thermostat — slower derate</td></tr>
                       <tr><td>Master controller fail</td><td style={{color:"var(--WN)"}}>Each PCC3300 falls back to standalone mode</td></tr>
@@ -1101,7 +1101,7 @@ export default function App(){
                   <div style={{fontSize:"13px",lineHeight:"1.8",color:"var(--TX)"}}>
                     <p style={{marginBottom:"10px"}}>In 40 years I've seen every combination of parallel generator failure. The most dangerous is the phase reversal on first connection — it happens to experienced electricians who trust cable color codes. The DC-900's internal bus eliminates this entirely. You cannot wire it wrong.</p>
                     <p style={{marginBottom:"10px"}}>The second is the neutral bonding error. At 450kW, a dual bond doesn't just nuisance-trip GFCI outlets — it injects significant ground current into the site electrical system. The permanent factory isolation relay on E2 neutral is the correct engineering solution.</p>
-                    <p style={{marginBottom:"10px"}}>The efficiency argument is real but nuanced. At high load (> 700kW), a single 900kW machine burns less fuel. But most industrial sites don't run at 700kW continuously — they run at 50–65% of peak demand. In that operating range, two smaller machines in load-following staging consistently beat one large machine.</p>
+                    <p style={{marginBottom:"10px"}}>The efficiency argument is real but nuanced. At high load (&gt; 700kW), a single 900kW machine burns less fuel. But most industrial sites don't run at 700kW continuously — they run at 50–65% of peak demand. In that operating range, two smaller machines in load-following staging consistently beat one large machine.</p>
                     <p>What this design cannot do: make the consequences of a common fuel contamination event disappear. That's the honest trade-off. The solution is rigorous fuel management — which the integrated polisher addresses — and the external bypass inlet for emergency direct-tank operation.</p>
                   </div>
                 </div>
