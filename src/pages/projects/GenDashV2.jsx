@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import SessionTimer from "../../components/SessionTimer";
 
 /* ══════════════════════════════════════════════════════════════════════
    450kW DIESEL GENSET — ENGINEERING REFERENCE DASHBOARD
@@ -369,7 +370,8 @@ export default function App() {
           <div className="htag">GENSET-001</div>
           <div><div className="h1">450kW Diesel Generator</div><div className="hsub">CUMMINS QSX15-G9 · MODEL DFEJ · EPA NSPS TIER 2 · 480V 3φ 60Hz · 563kVA STANDBY</div></div>
         </div>
-        <div className="hstat">
+         <div className="hstat">
+          <SessionTimer variant="compact" />
           <div className="sdot on" style={{ background: "var(--gr)", boxShadow: "0 0 8px var(--gr)" }} />
           <div className="slbl">RUNNING</div>
           <div className="htime" style={{ marginLeft: 10 }}>{time}</div>

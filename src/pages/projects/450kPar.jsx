@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import SessionTimer from "../../components/SessionTimer";
 
 /* ══════════════════════════════════════════════════════════════════════
    DUAL 450kW GENSET — PARALLEL OPERATION ENGINEERING REFERENCE
@@ -310,7 +311,8 @@ export default function App() {
             <div className="hsub">2× CUMMINS QSX15-G9 · 900kW / 1,125kVA COMBINED · 480V 3φ 60Hz · POWERCOMMAND PCC3300</div>
           </div>
         </div>
-        <div className="sstat">
+         <div className="sstat">
+          <SessionTimer variant="compact" />
           {[{ c: "#e8920a", lbl: "GEN 1", hz: g1hz.toFixed(2) + "Hz", on: true }, { c: "#18c0c8", lbl: "GEN 2", hz: g2 !== "stopped" ? g2hz.toFixed(2) + "Hz" : "OFFLINE", on: g2 !== "stopped" }, { c: "#2888e0", lbl: "BUS", hz: "480V", on: true }].map((s, i) => (
             <div className="ss" key={i}>
               <div className="sdot" style={{ background: s.on ? s.c : "#1a3040", boxShadow: s.on ? `0 0 8px ${s.c}` : "none", animation: s.on ? "bk 1.5s ease-in-out infinite" : "none" }} />

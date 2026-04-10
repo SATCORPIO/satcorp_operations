@@ -3,7 +3,8 @@ import Layout from '../components/Layout';
 import { useAuth } from '../context/AuthContext';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { Activity, FileText, Cpu, ArrowRight, ShieldCheck, Clock, Download } from 'lucide-react';
+import { Activity, FileText, Cpu, ArrowRight, ShieldCheck, Download } from 'lucide-react';
+import SessionTimer from '../components/SessionTimer';
 
 import telemetryBg from '../assets/telemetry-bg.png';
 import syncBg from '../assets/sync-bg.png';
@@ -67,13 +68,7 @@ const ClientPortal = () => {
             </p>
           </div>
           
-          <div className="flex items-center gap-6 bg-accent-red/5 tactical-border p-6 stealth-shadow w-full md:min-w-[280px]">
-            <Clock className="w-6 h-6 text-accent-red pulse-red" />
-            <div className="font-mono">
-              <p className="text-[9px] text-text-dim uppercase tracking-[0.3em] mb-1">Authorization Expiry</p>
-              <p className="text-xl font-bold text-white tracking-widest">14:02:45</p>
-            </div>
-          </div>
+           <SessionTimer className="md:min-w-[280px]" />
         </section>
 
         {/* ASSIGNED PROJECTS */}
@@ -181,9 +176,14 @@ const ClientPortal = () => {
               </p>
             </div>
           </div>
-          <button className="text-[10px] font-bold font-mono text-accent-red uppercase tracking-[0.4em] border border-accent-red/40 px-10 py-3 hover:bg-accent-red/10 transition-all stealth-shadow bg-black/40">
+          <a 
+            href="https://discord.gg/KqphHMq6vS" 
+            target="_blank" 
+            rel="noreferrer"
+            className="text-[10px] font-bold font-mono text-accent-red uppercase tracking-[0.4em] border border-accent-red/40 px-10 py-3 hover:bg-accent-red/10 transition-all stealth-shadow bg-black/40 text-center"
+          >
             SIGNAL: ANU@satcorp.io
-          </button>
+          </a>
         </section>
       </div>
     </Layout>

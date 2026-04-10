@@ -12,6 +12,7 @@ import {
   Zap,
   BarChart4
 } from 'lucide-react';
+import SessionTimer from '../../components/SessionTimer';
 
 const XOIClient = () => {
   const [submitting, setSubmitting] = useState(false);
@@ -718,12 +719,12 @@ const XOIClient = () => {
             <h1>Field Service Intelligence<br /><em>Discovery</em> Matrix</h1>
           </div>
           <div className="doc-header-right">
-            <div className="doc-meta">
+             <div className="doc-meta">
               <div><strong>Document</strong> · FSP-DQ-001</div>
               <div><strong>Version</strong> · 1.0</div>
-              <div><strong>Prepared by</strong> · SATCORP</div>
-              <div><strong>Date</strong> · 2026</div>
-              <div><strong>Confidentiality</strong> · Private</div>
+              <div className="mt-2">
+                <SessionTimer variant="compact" />
+              </div>
             </div>
           </div>
         </div>

@@ -3,6 +3,7 @@ import { useAuth } from '../context/AuthContext';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { LogOut, Home, Shield, User, ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import SessionTimer from './SessionTimer';
 
 const Layout = ({ children, title = 'OPERATION CENTER' }) => {
   const { user, logout } = useAuth();
@@ -59,6 +60,10 @@ const Layout = ({ children, title = 'OPERATION CENTER' }) => {
 
 
         <div className="flex items-center gap-4 md:gap-8">
+          <div className="hidden lg:block">
+            <SessionTimer variant="compact" />
+          </div>
+
           <div className="hidden md:flex flex-col items-end">
             <div className="flex items-center gap-2 text-[10px] font-mono text-accent-blue uppercase tracking-[0.2em] glow-text-cyan">
               <User className="w-3 h-3" />
@@ -73,7 +78,7 @@ const Layout = ({ children, title = 'OPERATION CENTER' }) => {
             onClick={handleSignOut}
             className="flex items-center gap-3 px-4 py-2 border border-accent-red/40 bg-accent-red/5 hover:bg-accent-red/20 transition-all group relative overflow-hidden"
           >
-            <span className="text-[9px] font-mono tracking-[0.2em] uppercase text-accent-red font-bold hidden xs:inline">Termination</span>
+            <span className="text-[9px] font-mono tracking-[0.2em] uppercase text-accent-red font-bold hidden xs:inline">Terminate</span>
             <LogOut className="w-3 h-3 text-accent-red group-hover:translate-x-1 transition-transform" />
           </button>
         </div>
