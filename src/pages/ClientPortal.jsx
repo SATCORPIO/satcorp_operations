@@ -9,6 +9,7 @@ import telemetryBg from '../assets/telemetry-bg.png';
 import syncBg from '../assets/sync-bg.png';
 import intelligenceBg from '../assets/intelligence-bg.png';
 import xoiBg from '../assets/xoi-intel-bg.png';
+import dualcoreBg from '../assets/dualcore-bg.png';
 
 const ClientPortal = () => {
   const { user } = useAuth();
@@ -62,7 +63,7 @@ const ClientPortal = () => {
       route: '/dualcore-900',
       icon: Zap,
       color: 'text-accent-cyan',
-      bg: syncBg,
+      bg: dualcoreBg,
       vector: 'VEC-E5-DUAL'
     }
   };

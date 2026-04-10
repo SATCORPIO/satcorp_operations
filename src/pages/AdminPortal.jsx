@@ -24,6 +24,7 @@ import telemetryBg from '../assets/telemetry-bg.png';
 import syncBg from '../assets/sync-bg.png';
 import intelligenceBg from '../assets/intelligence-bg.png';
 import xoiBg from '../assets/xoi-intel-bg.png';
+import dualcoreBg from '../assets/dualcore-bg.png';
 
 const AdminPortal = () => {
   const navigate = useNavigate();
@@ -82,7 +83,7 @@ const AdminPortal = () => {
       route: '/dualcore-900',
       icon: Zap,
       color: 'text-cyan-400',
-      bg: syncBg,
+      bg: dualcoreBg,
       vector: 'SEC-E5-DUAL'
     }
   ];

@@ -214,8 +214,8 @@ const XOIClient = () => {
           --border: #1c1c1c;
           --border-active: #333333;
           --text-primary: #ffffff;
-          --text-secondary: #a1a1aa;
-          --text-dim: #52525b;
+          --text-secondary: #cbd5e1;
+          --text-dim: #94a3b8;
           --accent-red: #e11d48;
           --accent-cyan: #06b6d4;
           --accent-amber: #f59e0b;
@@ -273,7 +273,7 @@ const XOIClient = () => {
 
         .doc-eyebrow {
           font-family: var(--mono);
-          font-size: 10px;
+          font-size: 11px;
           letter-spacing: 0.4em;
           text-transform: uppercase;
           color: var(--accent-cyan);
@@ -316,7 +316,7 @@ const XOIClient = () => {
 
         .doc-meta {
           font-family: var(--mono);
-          font-size: 10px;
+          font-size: 11px;
           line-height: 2.2;
           color: var(--text-dim);
           letter-spacing: 0.1em;
@@ -347,10 +347,10 @@ const XOIClient = () => {
         }
 
         .intro p {
-          font-size: 14px;
+          font-size: 16px;
           line-height: 1.8;
           color: var(--text-secondary);
-          margin-bottom: 20px;
+          margin-bottom: 24px;
           position: relative;
           z-index: 1;
         }
@@ -380,7 +380,7 @@ const XOIClient = () => {
 
         .section-num {
           font-family: var(--mono);
-          font-size: 11px;
+          font-size: 13px;
           color: var(--accent-cyan);
           letter-spacing: 0.2em;
           background: rgba(6,182,212,0.1);
@@ -397,7 +397,7 @@ const XOIClient = () => {
         }
 
         .section-desc {
-          font-size: 10px;
+          font-size: 11px;
           color: var(--text-dim);
           margin-left: auto;
           font-family: var(--mono);
@@ -440,7 +440,7 @@ const XOIClient = () => {
 
         .q-num {
           font-family: var(--mono);
-          font-size: 9px;
+          font-size: 11px;
           color: var(--text-dim);
           letter-spacing: 0.3em;
           margin-bottom: 12px;
@@ -456,7 +456,7 @@ const XOIClient = () => {
         }
 
         .q-hint {
-          font-size: 12px;
+          font-size: 13px;
           color: var(--text-dim);
           margin-bottom: 24px;
           line-height: 1.6;
@@ -508,7 +508,7 @@ const XOIClient = () => {
           cursor: pointer;
           transition: all 0.2s;
           background: rgba(0, 0, 0, 0.2);
-          font-size: 13px;
+          font-size: 14px;
           color: var(--text-secondary);
           border-radius: 2px;
         }
@@ -568,7 +568,7 @@ const XOIClient = () => {
           justify-content: space-between;
           margin-top: 10px;
           font-family: var(--mono);
-          font-size: 9px;
+          font-size: 11px;
           color: var(--text-dim);
           letter-spacing: 0.15em;
           text-transform: uppercase;
@@ -584,7 +584,7 @@ const XOIClient = () => {
 
         .priority-table th {
           font-family: var(--mono);
-          font-size: 9px;
+          font-size: 11px;
           letter-spacing: 0.2em;
           text-transform: uppercase;
           color: var(--text-dim);
@@ -655,7 +655,7 @@ const XOIClient = () => {
         }
 
         .submit-section p {
-          font-size: 13px;
+          font-size: 14px;
           color: var(--text-dim);
           margin-bottom: 40px;
           line-height: 1.8;

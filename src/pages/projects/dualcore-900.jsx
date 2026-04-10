@@ -35,8 +35,8 @@ const CSS = `
   --PU:#9040e0;       /* purple accent */
   --PUb:#c080ff;
   --TX:#b8d8f8;       /* text hi */
-  --TM:#486888;       /* text mid */
-  --TL:#1e3858;       /* text lo */
+  --TM:#80aacc;       /* text mid — brightened from #486888 */
+  --TL:#4a74a2;       /* text lo — brightened from #1e3858 */
   --MO:'JetBrains Mono',monospace;
   --SA:'Rajdhani',sans-serif;
   --DI:'Bebas Neue',sans-serif;
@@ -73,18 +73,18 @@ html,body{background:var(--ink);}
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
   line-height:1;
 }
-.brand-sub{font-family:var(--MO);font-size:9px;color:var(--TM);letter-spacing:2px;margin-top:2px;}
+.brand-sub{font-family:var(--MO);font-size:11px;color:var(--TM);letter-spacing:2px;margin-top:2px;}
 .spec-strip{display:flex;gap:20px;flex-wrap:wrap;}
 .spec-chip{text-align:center;}
 .spec-chip-v{font-family:var(--DI);font-size:18px;color:var(--BUSb);letter-spacing:2px;}
-.spec-chip-k{font-family:var(--MO);font-size:7px;color:var(--TM);letter-spacing:2px;text-transform:uppercase;}
+.spec-chip-k{font-family:var(--MO);font-size:10px;color:var(--TM);letter-spacing:2px;text-transform:uppercase;}
 .sys-dots{display:flex;gap:12px;align-items:center;}
 .dot-item{display:flex;flex-direction:column;align-items:center;gap:3px;}
 .dot{width:10px;height:10px;border-radius:50%;}
 .dot.on{animation:pulse 1.8s ease-in-out infinite;}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.55;transform:scale(.82)}}
-.dot-lbl{font-family:var(--MO);font-size:7px;letter-spacing:1.5px;text-transform:uppercase;}
-.dot-val{font-family:var(--MO);font-size:8px;}
+.dot-lbl{font-family:var(--MO);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;}
+.dot-val{font-family:var(--MO);font-size:10px;}
 
 /* ─── TABS ─── */
 .tabs{display:flex;background:var(--ink);border-bottom:1px solid var(--line);padding:0 28px;overflow-x:auto;}
@@ -100,7 +100,7 @@ html,body{background:var(--ink);}
 .panel{background:var(--p1);border:1px solid var(--line);position:relative;}
 .panel[data-lbl]::before{
   content:attr(data-lbl);position:absolute;top:0;left:0;
-  font-family:var(--MO);font-size:7px;letter-spacing:2px;
+  font-family:var(--MO);font-size:10px;letter-spacing:2px;
   padding:3px 12px;background:var(--line);color:var(--TM);text-transform:uppercase;z-index:2;
 }
 .pi{padding:26px 18px 18px;}
@@ -115,7 +115,7 @@ html,body{background:var(--ink);}
 .panel.highlight{border:1px solid var(--E1);background:linear-gradient(135deg,var(--p1) 80%,#1a1800 100%);}
 
 /* ─── SECTION HDR ─── */
-.sh{font-family:var(--MO);font-size:8px;letter-spacing:3px;color:var(--TM);text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:10px;}
+.sh{font-family:var(--MO);font-size:11px;letter-spacing:3px;color:var(--TM);text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:10px;}
 .sh::after{content:'';flex:1;height:1px;background:var(--line);}
 .sh.e1{color:var(--E1);}
 .sh.e2{color:var(--E2);}
@@ -124,10 +124,10 @@ html,body{background:var(--ink);}
 /* ─── SPEC TABLE ─── */
 .st{width:100%;border-collapse:collapse;font-size:13px;}
 .st td{padding:5px 10px;border-bottom:1px solid var(--line);}
-.st td:first-child{color:var(--TM);font-family:var(--MO);font-size:9px;letter-spacing:.5px;text-transform:uppercase;width:52%;}
+.st td:first-child{color:var(--TM);font-family:var(--MO);font-size:11px;letter-spacing:.5px;text-transform:uppercase;width:52%;}
 .st td:last-child{font-weight:700;text-align:right;}
 .st tr:last-child td{border-bottom:none;}
-.st .hr td{color:var(--TX)!important;font-size:9px!important;font-weight:700;background:var(--p3);letter-spacing:2px!important;}
+.st .hr td{color:var(--TX)!important;font-size:11px!important;font-weight:700;background:var(--p3);letter-spacing:2px!important;}
 .st .e1c td:last-child{color:var(--E1b);}
 .st .e2c td:last-child{color:var(--E2b);}
 .st .okc td:last-child{color:var(--OK);}
@@ -138,7 +138,7 @@ html,body{background:var(--ink);}
 .st td:last-child{color:var(--E1b);}
 
 /* ─── CALLOUT ─── */
-.co{border-left:3px solid;padding:10px 14px;margin:8px 0;font-family:var(--MO);font-size:9px;line-height:1.7;}
+.co{border-left:3px solid;padding:10px 14px;margin:8px 0;font-family:var(--MO);font-size:11px;line-height:1.7;}
 .co.ok{border-color:var(--OK);color:var(--OK);background:rgba(20,80,30,.15);}
 .co.er{border-color:var(--ER);color:var(--ER2);background:rgba(60,0,0,.15);}
 .co.inf{border-color:var(--BUS);color:var(--BUSb);background:rgba(8,24,50,.25);}
@@ -148,11 +148,11 @@ html,body{background:var(--ink);}
 /* ─── COMPARE GRID ─── */
 .cmp-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--line);}
 .cmp-cell{background:var(--p1);padding:10px 14px;}
-.cmp-cell.hdr{background:var(--p3);font-family:var(--MO);font-size:9px;letter-spacing:2px;font-weight:700;text-transform:uppercase;}
+.cmp-cell.hdr{background:var(--p3);font-family:var(--MO);font-size:11px;letter-spacing:2px;font-weight:700;text-transform:uppercase;}
 .cmp-cell.e1h{color:var(--E1);}
 .cmp-cell.e2h{color:var(--E2);}
 .cmp-cell.dch{color:var(--BUSb);}
-.cmp-k{font-family:var(--MO);font-size:8px;color:var(--TM);margin-bottom:3px;text-transform:uppercase;letter-spacing:.5px;}
+.cmp-k{font-family:var(--MO);font-size:11px;color:var(--TM);margin-bottom:3px;text-transform:uppercase;letter-spacing:.5px;}
 .cmp-v{font-size:13px;font-weight:600;}
 .cmp-v.bad{color:var(--ER2);}
 .cmp-v.ok{color:var(--OK);}
@@ -162,9 +162,9 @@ html,body{background:var(--ink);}
 /* ─── FEATURE CARDS ─── */
 .fgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:12px;}
 .fcard{background:var(--p2);border:1px solid var(--line);border-left:3px solid;padding:14px 16px;}
-.fcard-t{font-family:var(--MO);font-size:10px;font-weight:700;letter-spacing:1px;margin-bottom:7px;text-transform:uppercase;}
+.fcard-t{font-family:var(--MO);font-size:12px;font-weight:700;letter-spacing:1px;margin-bottom:7px;text-transform:uppercase;}
 .fcard-b{font-size:13px;line-height:1.6;color:var(--TX);}
-.fcard-tag{font-family:var(--MO);font-size:7px;letter-spacing:2px;padding:2px 8px;display:inline-block;margin-top:7px;text-transform:uppercase;}
+.fcard-tag{font-family:var(--MO);font-size:10px;letter-spacing:2px;padding:2px 8px;display:inline-block;margin-top:7px;text-transform:uppercase;}
 
 /* ─── FLOW LINES ─── */
 @keyframes fR{from{stroke-dashoffset:20}to{stroke-dashoffset:0}}
@@ -179,7 +179,7 @@ html,body{background:var(--ink);}
 
 /* ─── EFFICIENCY BARS ─── */
 .ebar-row{display:flex;align-items:center;gap:10px;margin:5px 0;}
-.ebar-lbl{font-family:var(--MO);font-size:9px;color:var(--TM);width:120px;text-align:right;flex-shrink:0;}
+.ebar-lbl{font-family:var(--MO);font-size:11px;color:var(--TM);width:120px;text-align:right;flex-shrink:0;}
 .ebar-track{flex:1;height:12px;background:var(--ink);position:relative;overflow:hidden;border:1px solid var(--line);}
 .ebar-fill{height:100%;transition:width .5s ease;}
 .ebar-val{font-family:var(--MO);font-size:10px;font-weight:700;width:60px;flex-shrink:0;}
@@ -187,9 +187,9 @@ html,body{background:var(--ink);}
 /* ─── STAGES ─── */
 .stage{display:flex;gap:12px;align-items:flex-start;padding:8px 0;border-bottom:1px solid var(--line);}
 .stage:last-child{border-bottom:none;}
-.snum{width:26px;height:26px;display:flex;align-items:center;justify-content:center;font-family:var(--MO);font-size:9px;font-weight:700;flex-shrink:0;}
+.snum{width:26px;height:26px;display:flex;align-items:center;justify-content:center;font-family:var(--MO);font-size:11px;font-weight:700;flex-shrink:0;}
 .sbody .st{font-size:14px;font-weight:600;}
-.sbody .ss{font-family:var(--MO);font-size:9px;color:var(--TM);margin-top:3px;line-height:1.5;}
+.sbody .ss{font-family:var(--MO);font-size:11px;color:var(--TM);margin-top:3px;line-height:1.5;}
 
 /* ─── TILES ─── */
 .tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px;}
@@ -199,7 +199,7 @@ html,body{background:var(--ink);}
 .tile.e2{border-left-color:var(--E2);}
 .tile.bu{border-left-color:var(--BUS);}
 .tile.ok{border-left-color:var(--OK);}
-.tk{font-family:var(--MO);font-size:7px;letter-spacing:2px;color:var(--TM);text-transform:uppercase;margin-bottom:4px;}
+.tk{font-family:var(--MO);font-size:10px;letter-spacing:2px;color:var(--TM);text-transform:uppercase;margin-bottom:4px;}
 .tv{font-family:var(--DI);font-size:20px;color:var(--E1b);letter-spacing:1px;line-height:1;}
 .tu{font-size:10px;color:var(--TM);margin-left:2px;}
 .ts{font-size:11px;color:var(--TL);margin-top:3px;}
@@ -212,7 +212,7 @@ html,body{background:var(--ink);}
 /* GAUGE */
 .grow{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}
 .gwrap{display:flex;flex-direction:column;align-items:center;gap:4px;}
-.glbl{font-family:var(--MO);font-size:7px;letter-spacing:1px;color:var(--TM);text-transform:uppercase;}
+.glbl{font-family:var(--MO);font-size:10px;letter-spacing:1px;color:var(--TM);text-transform:uppercase;}
 `;
 
 /* ── ARC GAUGE ── */
@@ -231,8 +231,8 @@ function G({value,min,max,label,unit,size=88,color="#f0a010",warn,danger,dec=0})
       {arc(-225,45,"#0c1e30")}{arc(-225,ang,vc)}
       <line x1={cx}y1={cy}x2={tip.x}y2={tip.y}stroke={vc}strokeWidth="1.5"strokeLinecap="round"/>
       <circle cx={cx}cy={cy}r="3"fill={vc}/>
-      <text x={cx}y={cy+17}textAnchor="middle"fill={vc}fontSize="12"fontFamily="'JetBrains Mono'"fontWeight="700">{value.toFixed(dec)}</text>
-      <text x={cx}y={cy+27}textAnchor="middle"fill="#3a6080"fontSize="7"fontFamily="'JetBrains Mono'">{unit}</text>
+      <text x={cx}y={cy+17}textAnchor="middle"fill={vc}fontSize="13"fontFamily="'JetBrains Mono'"fontWeight="700">{value.toFixed(dec)}</text>
+      <text x={cx}y={cy+27}textAnchor="middle"fill="#5a80a0"fontSize="10"fontFamily="'JetBrains Mono'">{unit}</text>
     </svg>
     <div className="glbl">{label}</div>
   </div>);
@@ -256,13 +256,13 @@ function ArchDiagram({mode}){
 
       {/* ── OUTER ENCLOSURE ── */}
       <rect x="8"y="8"width="884"height="424"fill="none"stroke="#1a3050"strokeWidth="2"strokeDasharray="8,4"rx="4"/>
-      <text x="14"y="24"fill="#1a3050"fontSize="9"fontFamily="'JetBrains Mono'"letterSpacing="3">DUALCORE 900 — INTEGRATED ENCLOSURE BOUNDARY</text>
+      <text x="14"y="24"fill="#4a74a2"fontSize="12"fontFamily="'JetBrains Mono'"letterSpacing="3">DUALCORE 900 — INTEGRATED ENCLOSURE BOUNDARY</text>
 
       {/* ── COMMON FUEL SYSTEM (top center) ── */}
       <rect x="350"y="20"width="200"height="60"fill="#0e1808"stroke="#c08020"strokeWidth="1.5"rx="2"/>
-      <text x="450"y="44"textAnchor="middle"fill="#c08020"fontSize="9"fontFamily="'JetBrains Mono'"fontWeight="700">COMMON FUEL SYSTEM</text>
-      <text x="450"y="57"textAnchor="middle"fill="#806020"fontSize="7"fontFamily="'JetBrains Mono'">Sub-base tank · Polisher · Single fill</text>
-      <text x="450"y="68"textAnchor="middle"fill="#806020"fontSize="7"fontFamily="'JetBrains Mono'">Day tank heater · Single level sensor</text>
+      <text x="450"y="44"textAnchor="middle"fill="#e0a040"fontSize="12"fontFamily="'JetBrains Mono'"fontWeight="700">COMMON FUEL SYSTEM</text>
+      <text x="450"y="57"textAnchor="middle"fill="#b08820"fontSize="10"fontFamily="'JetBrains Mono'">Sub-base tank · Polisher · Single fill</text>
+      <text x="450"y="68"textAnchor="middle"fill="#b08820"fontSize="10"fontFamily="'JetBrains Mono'">Day tank heater · Single level sensor</text>
 
       {/* Fuel to E1 */}
       <path className="ffu"d="M390 80 L390 135 L220 135"markerEnd="url(#aFU)"/>
@@ -271,9 +271,9 @@ function ArchDiagram({mode}){
 
       {/* ── COMMON COOLING (top right of center) ── */}
       <rect x="580"y="20"width="150"height="60"fill="#081818"stroke="#20b0b8"strokeWidth="1.5"rx="2"/>
-      <text x="655"y="42"textAnchor="middle"fill="#20b0b8"fontSize="9"fontFamily="'JetBrains Mono'"fontWeight="700">COMMON COOLING</text>
-      <text x="655"y="54"textAnchor="middle"fill="#1a7880"fontSize="7"fontFamily="'JetBrains Mono'">Dual-core radiator bank</text>
-      <text x="655"y="65"textAnchor="middle"fill="#1a7880"fontSize="7"fontFamily="'JetBrains Mono'">Variable-speed elec. fans</text>
+      <text x="655"y="42"textAnchor="middle"fill="#40c8d0"fontSize="12"fontFamily="'JetBrains Mono'"fontWeight="700">COMMON COOLING</text>
+      <text x="655"y="54"textAnchor="middle"fill="#2ab0b8"fontSize="10"fontFamily="'JetBrains Mono'">Dual-core radiator bank</text>
+      <text x="655"y="65"textAnchor="middle"fill="#2ab0b8"fontSize="10"fontFamily="'JetBrains Mono'">Variable-speed elec. fans</text>
 
       {/* Coolant loops */}
       <path className="fco"d="M620 80 L620 100 L280 100 L280 155"markerEnd="url(#aCO)"/>
@@ -281,25 +281,25 @@ function ArchDiagram({mode}){
 
       {/* ── ENGINE 1 ── */}
       <rect x="80"y="120"width="280"height="160"fill={`#0e1a08`}stroke={`#f0a010`}strokeWidth="2"rx="2"filter="url(#gE1)"/>
-      <text x="220"y="148"textAnchor="middle"fill="#f0a010"fontSize="11"fontFamily="'JetBrains Mono'"fontWeight="700"letterSpacing="1">ENGINE 1 — QSX15-G9</text>
-      <text x="220"y="162"textAnchor="middle"fill="#806010"fontSize="8"fontFamily="'JetBrains Mono'">450kW / 563kVA · 1800RPM</text>
-      <text x="220"y="175"textAnchor="middle"fill="#806010"fontSize="8"fontFamily="'JetBrains Mono'">Bore 136.9mm · CR 17.0:1</text>
+      <text x="220"y="148"textAnchor="middle"fill="#f0a010"fontSize="13"fontFamily="'JetBrains Mono'"fontWeight="700"letterSpacing="1">ENGINE 1 — QSX15-G9</text>
+      <text x="220"y="162"textAnchor="middle"fill="#b08820"fontSize="10"fontFamily="'JetBrains Mono'">450kW / 563kVA · 1800RPM</text>
+      <text x="220"y="175"textAnchor="middle"fill="#b08820"fontSize="10"fontFamily="'JetBrains Mono'">Bore 136.9mm · CR 17.0:1</text>
       {/* E1 alternator */}
       <ellipse cx="220"cy="220"rx="55"ry="30"fill="#0a1808"stroke="#f0a010"strokeWidth="1.5"/>
-      <text x="220"y="216"textAnchor="middle"fill="#f0a010"fontSize="8"fontFamily="'JetBrains Mono'"fontWeight="700">ALT 1</text>
-      <text x="220"y="228"textAnchor="middle"fill="#806010"fontSize="7"fontFamily="'JetBrains Mono'">PMG · Class H</text>
+      <text x="220"y="216"textAnchor="middle"fill="#f0a010"fontSize="11"fontFamily="'JetBrains Mono'"fontWeight="700">ALT 1</text>
+      <text x="220"y="228"textAnchor="middle"fill="#b08820"fontSize="9"fontFamily="'JetBrains Mono'">PMG · Class H</text>
       {/* E1 CB */}
       <rect x="168"y="265"width="104"height="28"fill="#1a0e00"stroke="#f0a010"strokeWidth="1.5"rx="1"/>
-      <text x="220"y="277"textAnchor="middle"fill="#f0a010"fontSize="8"fontFamily="'JetBrains Mono'"fontWeight="700">CB1 — 1200A</text>
-      <text x="220"y="288"textAnchor="middle"fill="#20e060"fontSize="7"fontFamily="'JetBrains Mono'">FACTORY WIRED</text>
+      <text x="220"y="277"textAnchor="middle"fill="#f0a010"fontSize="11"fontFamily="'JetBrains Mono'"fontWeight="700">CB1 — 1200A</text>
+      <text x="220"y="288"textAnchor="middle"fill="#20e060"fontSize="10"fontFamily="'JetBrains Mono'">FACTORY WIRED</text>
       {/* CB1 to bus */}
       <path className="fe1"d="M220 293 L220 330 L430 330"markerEnd="url(#aE1)"/>
 
       {/* ── ENGINE 2 ── */}
       <rect x="540"y="120"width="280"height="160"fill="#081a18"stroke="#10c8d0"strokeWidth="2"rx="2"filter="url(#gE2)"opacity={e2?1:.3}/>
-      <text x="680"y="148"textAnchor="middle"fill={e2?"#10c8d0":"#1a4040"}fontSize="11"fontFamily="'JetBrains Mono'"fontWeight="700"letterSpacing="1">ENGINE 2 — QSX15-G9</text>
-      <text x="680"y="162"textAnchor="middle"fill={e2?"#107880":"#0a2828"}fontSize="8"fontFamily="'JetBrains Mono'">450kW / 563kVA · 1800RPM</text>
-      <text x="680"y="175"textAnchor="middle"fill={e2?"#107880":"#0a2828"}fontSize="8"fontFamily="'JetBrains Mono'">Bore 136.9mm · CR 17.0:1</text>
+      <text x="680"y="148"textAnchor="middle"fill={e2?"#10c8d0":"#1a4040"}fontSize="13"fontFamily="'JetBrains Mono'"fontWeight="700"letterSpacing="1">ENGINE 2 — QSX15-G9</text>
+      <text x="680"y="162"textAnchor="middle"fill={e2?"#2ab0b8":"#0a2828"}fontSize="10"fontFamily="'JetBrains Mono'">450kW / 563kVA · 1800RPM</text>
+      <text x="680"y="175"textAnchor="middle"fill={e2?"#2ab0b8":"#0a2828"}fontSize="10"fontFamily="'JetBrains Mono'">Bore 136.9mm · CR 17.0:1</text>
       <ellipse cx="680"cy="220"rx="55"ry="30"fill="#081818"stroke={e2?"#10c8d0":"#1a4040"}strokeWidth="1.5"/>
       <text x="680"y="216"textAnchor="middle"fill={e2?"#10c8d0":"#1a4040"}fontSize="8"fontFamily="'JetBrains Mono'"fontWeight="700">ALT 2</text>
       <text x="680"y="228"textAnchor="middle"fill={e2?"#107880":"#0a2828"}fontSize="7"fontFamily="'JetBrains Mono'">PMG · Class H · N FLOAT</text>
@@ -318,14 +318,14 @@ function ArchDiagram({mode}){
       {["25","32","51","27","86"].map((n,i)=>(
         <g key={n}>
           <circle cx={368+i*38}cy={368}r="10"fill="#080818"stroke="#3090f0"strokeWidth="1"/>
-          <text x={368+i*38}y={371}textAnchor="middle"fill="#3090f0"fontSize="7"fontFamily="'JetBrains Mono'"fontWeight="700">{n}</text>
+          <text x={368+i*38}y={371}textAnchor="middle"fill="#3090f0"fontSize="10"fontFamily="'JetBrains Mono'"fontWeight="700">{n}</text>
         </g>
       ))}
-      <text x="450"y="390"textAnchor="middle"fill="#1a3060"fontSize="7"fontFamily="'JetBrains Mono'">FACTORY WIRED · FACTORY TESTED · FACTORY COORDINATED</text>
+      <text x="450"y="390"textAnchor="middle"fill="#80aacc"fontSize="10"fontFamily="'JetBrains Mono'">FACTORY WIRED · FACTORY TESTED · FACTORY COORDINATED</text>
       {/* Neutral management */}
       <rect x="362"y="396"width="176"height="22"fill="#100808"stroke="#f02828"strokeWidth="1"strokeDasharray="2,2"rx="1"/>
-      <text x="450"y="407"textAnchor="middle"fill="#f02828"fontSize="7"fontFamily="'JetBrains Mono'"fontWeight="700">E1 N BONDED · E2 N ISOLATED RELAY</text>
-      <text x="450"y="418"textAnchor="middle"fill="#802020"fontSize="7"fontFamily="'JetBrains Mono'">PERMANENT · CANNOT BE WRONG IN FIELD</text>
+      <text x="450"y="407"textAnchor="middle"fill="#f02828"fontSize="10"fontFamily="'JetBrains Mono'"fontWeight="700">E1 N BONDED · E2 N ISOLATED RELAY</text>
+      <text x="450"y="418"textAnchor="middle"fill="#ad4a4a"fontSize="9"fontFamily="'JetBrains Mono'">PERMANENT · CANNOT BE WRONG IN FIELD</text>
 
       {/* ── EXHAUST COLLECTOR ── */}
       <rect x="80"y="20"width="130"height="55"fill="#100a00"stroke="#805030"strokeWidth="1.5"rx="2"/>
@@ -337,11 +337,11 @@ function ArchDiagram({mode}){
 
       {/* ── OUTPUT ── */}
       <rect x="730"y="330"width="140"height="80"fill="#081808"stroke="#20e060"strokeWidth="1.5"rx="2"/>
-      <text x="800"y="352"textAnchor="middle"fill="#20e060"fontSize="9"fontFamily="'JetBrains Mono'"fontWeight="700">OUTPUT</text>
-      <text x="800"y="366"textAnchor="middle"fill="#187030"fontSize="8"fontFamily="'JetBrains Mono'">{both?"900kW":"450kW"}</text>
-      <text x="800"y="378"textAnchor="middle"fill="#187030"fontSize="8"fontFamily="'JetBrains Mono'">480V 3φ 60Hz</text>
-      <text x="800"y="390"textAnchor="middle"fill="#187030"fontSize="8"fontFamily="'JetBrains Mono'">SINGLE CONNECTION POINT</text>
-      <text x="800"y="402"textAnchor="middle"fill="#187030"fontSize="7"fontFamily="'JetBrains Mono'">Camlocks · ATS port</text>
+      <text x="800"y="352"textAnchor="middle"fill="#20e060"fontSize="12"fontFamily="'JetBrains Mono'"fontWeight="700">OUTPUT</text>
+      <text x="800"y="366"textAnchor="middle"fill="#40c060"fontSize="11"fontFamily="'JetBrains Mono'">{both?"900kW":"450kW"}</text>
+      <text x="800"y="378"textAnchor="middle"fill="#40c060"fontSize="11"fontFamily="'JetBrains Mono'">480V 3φ 60Hz</text>
+      <text x="800"y="390"textAnchor="middle"fill="#40c060"fontSize="11"fontFamily="'JetBrains Mono'">SINGLE CONNECTION POINT</text>
+      <text x="800"y="402"textAnchor="middle"fill="#40c060"fontSize="10"fontFamily="'JetBrains Mono'">Camlocks · ATS port</text>
       <path className="fbu"d="M550 330 L550 370 L730 370"markerEnd="url(#aBU)"/>
 
       {/* ── HMI CONTROL ── */}
@@ -377,13 +377,13 @@ function IntSLD({mode}){
       </defs>
       {/* Enclosure box */}
       <rect x="2"y="2"width="680"height="316"fill="none"stroke="#1a3050"strokeWidth="1"strokeDasharray="6,3"rx="3"/>
-      <text x="8"y="18"fill="#1a3050"fontSize="7"fontFamily="'JetBrains Mono'"letterSpacing="2">DUALCORE 900 — INTERNAL BOUNDARY</text>
+      <text x="8"y="18"fill="#4a74a2"fontSize="10"fontFamily="'JetBrains Mono'"letterSpacing="2">DUALCORE 900 — INTERNAL BOUNDARY</text>
 
       {/* E1 generator symbol */}
       <circle cx="90"cy="100"r="48"fill="#0e1a08"stroke="#f0a010"strokeWidth="2"/>
-      <text x="90"y="93"textAnchor="middle"fill="#f0a010"fontSize="9"fontFamily="'JetBrains Mono'"fontWeight="700">E1</text>
-      <text x="90"y="106"textAnchor="middle"fill="#806010"fontSize="8"fontFamily="'JetBrains Mono'">450kW</text>
-      <text x="90"y="118"textAnchor="middle"fill="#604010"fontSize="7"fontFamily="'JetBrains Mono'">N BONDED</text>
+      <text x="90"y="93"textAnchor="middle"fill="#f0a010"fontSize="13"fontFamily="'JetBrains Mono'"fontWeight="700">E1</text>
+      <text x="90"y="106"textAnchor="middle"fill="#b08820"fontSize="11"fontFamily="'JetBrains Mono'">450kW</text>
+      <text x="90"y="118"textAnchor="middle"fill="#b08820"fontSize="10"fontFamily="'JetBrains Mono'">N BONDED</text>
 
       {/* CB1 — internal, factory */}
       <rect x="62"y="164"width="56"height="30"fill="#1a0e00"stroke="#f0a010"strokeWidth="1.5"rx="1"/>
@@ -444,11 +444,11 @@ function IntSLD({mode}){
       <text x="808"y="263"textAnchor="middle"fill="#18a040"fontSize="7"fontFamily="'JetBrains Mono'">Single plug point</text>
       <line x1="764"y1="235"x2="764"y2="235"stroke="#20e060"strokeWidth="3"strokeDasharray="7,4"strokeDashoffset={-off}markerEnd="url(#aOK)"/>
 
-      {/* Ground / Neutral note */}
+      {/* Neutral management */}
       <rect x="290"y="268"width="100"height="38"fill="#0e0808"stroke="#f02828"strokeWidth="1"strokeDasharray="2,2"rx="1"/>
-      <text x="340"y="282"textAnchor="middle"fill="#f02828"fontSize="7"fontFamily="'JetBrains Mono'"fontWeight="700">N-G MANAGEMENT</text>
-      <text x="340"y="293"textAnchor="middle"fill="#901818"fontSize="6"fontFamily="'JetBrains Mono'">E1: bonded. E2: isolated relay.</text>
-      <text x="340"y="303"textAnchor="middle"fill="#901818"fontSize="6"fontFamily="'JetBrains Mono'">Single field ground point only.</text>
+      <text x="340"y="282"textAnchor="middle"fill="#f02828"fontSize="11"fontFamily="'JetBrains Mono'"fontWeight="700">N-G MANAGEMENT</text>
+      <text x="340"y="293"textAnchor="middle"fill="#ad4a4a"fontSize="9"fontFamily="'JetBrains Mono'">E1: bonded. E2: isolated relay.</text>
+      <text x="340"y="303"textAnchor="middle"fill="#ad4a4a"fontSize="9"fontFamily="'JetBrains Mono'">Single field ground point only.</text>
 
       {/* Legend */}
       {[["#f0a010","E1 POWER"],["#10c8d0","E2 POWER"],["#3090f0","BUS"],["#20e060","OUTPUT"],["#9040e0","CONTROL"]].map(([c,l],i)=>(
