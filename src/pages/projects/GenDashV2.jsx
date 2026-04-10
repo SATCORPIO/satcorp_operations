@@ -518,7 +518,7 @@ export default function App() {
                     <tr className="hr"><td colSpan="2">ELECTRICAL PERFORMANCE</td></tr>
                     <tr><td>Voltage regulation</td><td>±0.5% (PowerCommand)</td></tr>
                     <tr><td>Frequency (isochronous)</td><td>±0.25% full load</td></tr>
-                    <tr><td>THD (linear load)</td><td>< 3%</td></tr>
+                    <tr><td>THD (linear load)</td><td>&lt; 3%</td></tr>
                     <tr><td>Motor start kVA (PMG)</td><td>2,208 kVA @ 90% V</td></tr>
                     <tr><td>Surge kW</td><td>511–516 kW</td></tr>
                     <tr><td>Short circuit capacity</td><td>65 kAIC minimum</td></tr>
