@@ -231,8 +231,8 @@ function G({value,min,max,label,unit,size=88,color="#f0a010",warn,danger,dec=0})
       {arc(-225,45,"#0c1e30")}{arc(-225,ang,vc)}
       <line x1={cx}y1={cy}x2={tip.x}y2={tip.y}stroke={vc}strokeWidth="1.5"strokeLinecap="round"/>
       <circle cx={cx}cy={cy}r="3"fill={vc}/>
-      <text x={cx}y={cy+17}textAnchor="middle"fill={vc}fontSize="13"fontFamily="'JetBrains Mono'"fontWeight="700">{value.toFixed(dec)}</text>
-      <text x={cx}y={cy+27}textAnchor="middle"fill="#5a80a0"fontSize="10"fontFamily="'JetBrains Mono'">{unit}</text>
+      <text x={cx}y={cy+17}textAnchor="middle"fill={vc}fontSize="15"fontFamily="'JetBrains Mono'"fontWeight="700">{value.toFixed(dec)}</text>
+      <text x={cx}y={cy+29}textAnchor="middle"fill="#5a80a0"fontSize="12"fontFamily="'JetBrains Mono'">{unit}</text>
     </svg>
     <div className="glbl">{label}</div>
   </div>);
@@ -256,13 +256,13 @@ function ArchDiagram({mode}){
 
       {/* ── OUTER ENCLOSURE ── */}
       <rect x="8"y="8"width="884"height="424"fill="none"stroke="#1a3050"strokeWidth="2"strokeDasharray="8,4"rx="4"/>
-      <text x="14"y="24"fill="#4a74a2"fontSize="12"fontFamily="'JetBrains Mono'"letterSpacing="3">DUALCORE 900 — INTEGRATED ENCLOSURE BOUNDARY</text>
+      <text x="14"y="26"fill="#4a74a2"fontSize="15"fontFamily="'JetBrains Mono'"letterSpacing="3">DUALCORE 900 — INTEGRATED ENCLOSURE BOUNDARY</text>
 
       {/* ── COMMON FUEL SYSTEM (top center) ── */}
-      <rect x="350"y="20"width="200"height="60"fill="#0e1808"stroke="#c08020"strokeWidth="1.5"rx="2"/>
-      <text x="450"y="44"textAnchor="middle"fill="#e0a040"fontSize="12"fontFamily="'JetBrains Mono'"fontWeight="700">COMMON FUEL SYSTEM</text>
-      <text x="450"y="57"textAnchor="middle"fill="#b08820"fontSize="10"fontFamily="'JetBrains Mono'">Sub-base tank · Polisher · Single fill</text>
-      <text x="450"y="68"textAnchor="middle"fill="#b08820"fontSize="10"fontFamily="'JetBrains Mono'">Day tank heater · Single level sensor</text>
+      <rect x="350"y="20"width="240"height="60"fill="#0e1808"stroke="#c08020"strokeWidth="1.5"rx="2"/>
+      <text x="470"y="46"textAnchor="middle"fill="#e0a040"fontSize="15"fontFamily="'JetBrains Mono'"fontWeight="700">COMMON FUEL SYSTEM</text>
+      <text x="470"y="60"textAnchor="middle"fill="#b08820"fontSize="12"fontFamily="'JetBrains Mono'">Sub-base tank · Polisher · Single fill</text>
+      <text x="470"y="74"textAnchor="middle"fill="#b08820"fontSize="12"fontFamily="'JetBrains Mono'">Day tank heater · Single level sensor</text>
 
       {/* Fuel to E1 */}
       <path className="ffu"d="M390 80 L390 135 L220 135"markerEnd="url(#aFU)"/>
@@ -270,94 +270,94 @@ function ArchDiagram({mode}){
       <path className="ffu"d="M510 80 L510 135 L680 135"markerEnd="url(#aFU)"/>
 
       {/* ── COMMON COOLING (top right of center) ── */}
-      <rect x="580"y="20"width="150"height="60"fill="#081818"stroke="#20b0b8"strokeWidth="1.5"rx="2"/>
-      <text x="655"y="42"textAnchor="middle"fill="#40c8d0"fontSize="12"fontFamily="'JetBrains Mono'"fontWeight="700">COMMON COOLING</text>
-      <text x="655"y="54"textAnchor="middle"fill="#2ab0b8"fontSize="10"fontFamily="'JetBrains Mono'">Dual-core radiator bank</text>
-      <text x="655"y="65"textAnchor="middle"fill="#2ab0b8"fontSize="10"fontFamily="'JetBrains Mono'">Variable-speed elec. fans</text>
+      <rect x="610"y="20"width="160"height="60"fill="#081818"stroke="#20b0b8"strokeWidth="1.5"rx="2"/>
+      <text x="690"y="44"textAnchor="middle"fill="#40c8d0"fontSize="15"fontFamily="'JetBrains Mono'"fontWeight="700">COMMON COOLING</text>
+      <text x="690"y="58"textAnchor="middle"fill="#2ab0b8"fontSize="12"fontFamily="'JetBrains Mono'">Dual-core radiator bank</text>
+      <text x="690"y="72"textAnchor="middle"fill="#2ab0b8"fontSize="12"fontFamily="'JetBrains Mono'">Variable-speed elec. fans</text>
 
       {/* Coolant loops */}
       <path className="fco"d="M620 80 L620 100 L280 100 L280 155"markerEnd="url(#aCO)"/>
       <path className="fco"d="M690 80 L690 105 L720 105 L720 155"markerEnd="url(#aCO)"/>
 
       {/* ── ENGINE 1 ── */}
-      <rect x="80"y="120"width="280"height="160"fill={`#0e1a08`}stroke={`#f0a010`}strokeWidth="2"rx="2"filter="url(#gE1)"/>
-      <text x="220"y="148"textAnchor="middle"fill="#f0a010"fontSize="13"fontFamily="'JetBrains Mono'"fontWeight="700"letterSpacing="1">ENGINE 1 — QSX15-G9</text>
-      <text x="220"y="162"textAnchor="middle"fill="#b08820"fontSize="10"fontFamily="'JetBrains Mono'">450kW / 563kVA · 1800RPM</text>
-      <text x="220"y="175"textAnchor="middle"fill="#b08820"fontSize="10"fontFamily="'JetBrains Mono'">Bore 136.9mm · CR 17.0:1</text>
+      <rect x="80"y="120"width="280"height="165"fill={`#0e1a08`}stroke={`#f0a010`}strokeWidth="2"rx="2"filter="url(#gE1)"/>
+      <text x="220"y="150"textAnchor="middle"fill="#f0a010"fontSize="16"fontFamily="'JetBrains Mono'"fontWeight="700"letterSpacing="1">ENGINE 1 — QSX15-G9</text>
+      <text x="220"y="166"textAnchor="middle"fill="#b08820"fontSize="12"fontFamily="'JetBrains Mono'">450kW / 563kVA · 1800RPM</text>
+      <text x="220"y="180"textAnchor="middle"fill="#b08820"fontSize="12"fontFamily="'JetBrains Mono'">Bore 136.9mm · CR 17.0:1</text>
       {/* E1 alternator */}
-      <ellipse cx="220"cy="220"rx="55"ry="30"fill="#0a1808"stroke="#f0a010"strokeWidth="1.5"/>
-      <text x="220"y="216"textAnchor="middle"fill="#f0a010"fontSize="11"fontFamily="'JetBrains Mono'"fontWeight="700">ALT 1</text>
-      <text x="220"y="228"textAnchor="middle"fill="#b08820"fontSize="9"fontFamily="'JetBrains Mono'">PMG · Class H</text>
+      <ellipse cx="220"cy="225"rx="55"ry="35"fill="#0a1808"stroke="#f0a010"strokeWidth="1.5"/>
+      <text x="220"y="222"textAnchor="middle"fill="#f0a010"fontSize="14"fontFamily="'JetBrains Mono'"fontWeight="700">ALT 1</text>
+      <text x="220"y="236"textAnchor="middle"fill="#b08820"fontSize="11"fontFamily="'JetBrains Mono'">PMG · Class H</text>
       {/* E1 CB */}
-      <rect x="168"y="265"width="104"height="28"fill="#1a0e00"stroke="#f0a010"strokeWidth="1.5"rx="1"/>
-      <text x="220"y="277"textAnchor="middle"fill="#f0a010"fontSize="11"fontFamily="'JetBrains Mono'"fontWeight="700">CB1 — 1200A</text>
-      <text x="220"y="288"textAnchor="middle"fill="#20e060"fontSize="10"fontFamily="'JetBrains Mono'">FACTORY WIRED</text>
+      <rect x="168"y="270"width="104"height="32"fill="#1a0e00"stroke="#f0a010"strokeWidth="1.5"rx="1"/>
+      <text x="220"y="283"textAnchor="middle"fill="#f0a010"fontSize="14"fontFamily="'JetBrains Mono'"fontWeight="700">CB1 — 1200A</text>
+      <text x="220"y="296"textAnchor="middle"fill="#20e060"fontSize="11"fontFamily="'JetBrains Mono'">FACTORY WIRED</text>
       {/* CB1 to bus */}
       <path className="fe1"d="M220 293 L220 330 L430 330"markerEnd="url(#aE1)"/>
 
       {/* ── ENGINE 2 ── */}
-      <rect x="540"y="120"width="280"height="160"fill="#081a18"stroke="#10c8d0"strokeWidth="2"rx="2"filter="url(#gE2)"opacity={e2?1:.3}/>
-      <text x="680"y="148"textAnchor="middle"fill={e2?"#10c8d0":"#1a4040"}fontSize="13"fontFamily="'JetBrains Mono'"fontWeight="700"letterSpacing="1">ENGINE 2 — QSX15-G9</text>
-      <text x="680"y="162"textAnchor="middle"fill={e2?"#2ab0b8":"#0a2828"}fontSize="10"fontFamily="'JetBrains Mono'">450kW / 563kVA · 1800RPM</text>
-      <text x="680"y="175"textAnchor="middle"fill={e2?"#2ab0b8":"#0a2828"}fontSize="10"fontFamily="'JetBrains Mono'">Bore 136.9mm · CR 17.0:1</text>
-      <ellipse cx="680"cy="220"rx="55"ry="30"fill="#081818"stroke={e2?"#10c8d0":"#1a4040"}strokeWidth="1.5"/>
-      <text x="680"y="216"textAnchor="middle"fill={e2?"#10c8d0":"#1a4040"}fontSize="8"fontFamily="'JetBrains Mono'"fontWeight="700">ALT 2</text>
-      <text x="680"y="228"textAnchor="middle"fill={e2?"#107880":"#0a2828"}fontSize="7"fontFamily="'JetBrains Mono'">PMG · Class H · N FLOAT</text>
-      <rect x="628"y="265"width="104"height="28"fill={e2?"#001a1a":"#0a0a0a"}stroke={e2?"#10c8d0":"#1a4040"}strokeWidth="1.5"rx="1"/>
-      <text x="680"y="277"textAnchor="middle"fill={e2?"#10c8d0":"#1a4040"}fontSize="8"fontFamily="'JetBrains Mono'"fontWeight="700">CB2 — 1200A</text>
-      <text x="680"y="288"textAnchor="middle"fill={e2?"#20e060":"#882020"}fontSize="7"fontFamily="'JetBrains Mono'">{e2?"FACTORY WIRED":"N/A"}</text>
+      <rect x="540"y="120"width="280"height="165"fill="#081a18"stroke="#10c8d0"strokeWidth="2"rx="2"filter="url(#gE2)"opacity={e2?1:.3}/>
+      <text x="680"y="150"textAnchor="middle"fill={e2?"#10c8d0":"#1a4040"}fontSize="16"fontFamily="'JetBrains Mono'"fontWeight="700"letterSpacing="1">ENGINE 2 — QSX15-G9</text>
+      <text x="680"y="166"textAnchor="middle"fill={e2?"#2ab0b8":"#0a2828"}fontSize="12"fontFamily="'JetBrains Mono'">450kW / 563kVA · 1800RPM</text>
+      <text x="680"y="180"textAnchor="middle"fill={e2?"#2ab0b8":"#0a2828"}fontSize="12"fontFamily="'JetBrains Mono'">Bore 136.9mm · CR 17.0:1</text>
+      <ellipse cx="680"cy="225"rx="55"ry="35"fill="#081818"stroke={e2?"#10c8d0":"#1a4040"}strokeWidth="1.5"/>
+      <text x="680"y="222"textAnchor="middle"fill={e2?"#10c8d0":"#1a4040"}fontSize="14"fontFamily="'JetBrains Mono'"fontWeight="700">ALT 2</text>
+      <text x="680"y="236"textAnchor="middle"fill={e2?"#10b8c0":"#0a2828"}fontSize="11"fontFamily="'JetBrains Mono'">PMG · Class H · N FLOAT</text>
+      <rect x="628"y="270"width="104"height="32"fill={e2?"#001a1a":"#0a0a0a"}stroke={e2?"#10c8d0":"#1a4040"}strokeWidth="1.5"rx="1"/>
+      <text x="680"y="283"textAnchor="middle"fill={e2?"#10c8d0":"#1a4040"}fontSize="14"fontFamily="'JetBrains Mono'"fontWeight="700">CB2 — 1200A</text>
+      <text x="680"y="296"textAnchor="middle"fill={e2?"#20e060":"#882020"}fontSize="11"fontFamily="'JetBrains Mono'">{e2?"FACTORY WIRED":"N/A"}</text>
       {e2&&<path className="fe2"d="M680 293 L680 330 L570 330"markerEnd="url(#aE2)"/>}
 
       {/* ── INTEGRATED PARALLELING SWITCHGEAR ── */}
       <rect x="350"y="310"width="200"height="120"fill="#080a20"stroke="#3090f0"strokeWidth="2"rx="2"/>
-      <text x="450"y="328"textAnchor="middle"fill="#3090f0"fontSize="9"fontFamily="'JetBrains Mono'"fontWeight="700"letterSpacing="1">INT. PARALLEL SWITCHGEAR</text>
+      <text x="450"y="332"textAnchor="middle"fill="#3090f0"fontSize="14"fontFamily="'JetBrains Mono'"fontWeight="700"letterSpacing="1">INT. PARALLEL SWITCHGEAR</text>
       {/* Bus bar */}
-      <rect x="362"y="334"width="176"height="14"fill="#0a1828"stroke="#3090f0"strokeWidth="1.5"/>
-      <text x="450"y="344"textAnchor="middle"fill="#3090f0"fontSize="7"fontFamily="'JetBrains Mono'">480V COMMON BUS · 2000A</text>
+      <rect x="362"y="338"width="176"height="18"fill="#0a1828"stroke="#3090f0"strokeWidth="1.5"/>
+      <text x="450"y="351"textAnchor="middle"fill="#3090f0"fontSize="11"fontFamily="'JetBrains Mono'">480V COMMON BUS · 2000A</text>
       {/* ANSI relays */}
       {["25","32","51","27","86"].map((n,i)=>(
         <g key={n}>
-          <circle cx={368+i*38}cy={368}r="10"fill="#080818"stroke="#3090f0"strokeWidth="1"/>
-          <text x={368+i*38}y={371}textAnchor="middle"fill="#3090f0"fontSize="10"fontFamily="'JetBrains Mono'"fontWeight="700">{n}</text>
+          <circle cx={368+i*41}cy={375}r="12"fill="#080818"stroke="#3090f0"strokeWidth="1"/>
+          <text x={368+i*41}y={379}textAnchor="middle"fill="#3090f0"fontSize="13"fontFamily="'JetBrains Mono'"fontWeight="700">{n}</text>
         </g>
       ))}
-      <text x="450"y="390"textAnchor="middle"fill="#80aacc"fontSize="10"fontFamily="'JetBrains Mono'">FACTORY WIRED · FACTORY TESTED · FACTORY COORDINATED</text>
+      <text x="450"y="404"textAnchor="middle"fill="#80aacc"fontSize="12"fontFamily="'JetBrains Mono'">FACTORY WIRED · TESTED · COORDINATED</text>
       {/* Neutral management */}
-      <rect x="362"y="396"width="176"height="22"fill="#100808"stroke="#f02828"strokeWidth="1"strokeDasharray="2,2"rx="1"/>
-      <text x="450"y="407"textAnchor="middle"fill="#f02828"fontSize="10"fontFamily="'JetBrains Mono'"fontWeight="700">E1 N BONDED · E2 N ISOLATED RELAY</text>
-      <text x="450"y="418"textAnchor="middle"fill="#ad4a4a"fontSize="9"fontFamily="'JetBrains Mono'">PERMANENT · CANNOT BE WRONG IN FIELD</text>
+      <rect x="362"y="410"width="176"height="24"fill="#100808"stroke="#f02828"strokeWidth="1"strokeDasharray="2,2"rx="1"/>
+      <text x="450"y="423"textAnchor="middle"fill="#f02828"fontSize="13"fontFamily="'JetBrains Mono'"fontWeight="700">E1 N BONDED · E2 N ISOLATED</text>
+      <text x="450"y="436"textAnchor="middle"fill="#ad4a4a"fontSize="11"fontFamily="'JetBrains Mono'">PERMANENT · CANNOT BE WRONG IN FIELD</text>
 
       {/* ── EXHAUST COLLECTOR ── */}
-      <rect x="80"y="20"width="130"height="55"fill="#100a00"stroke="#805030"strokeWidth="1.5"rx="2"/>
-      <text x="145"y="40"textAnchor="middle"fill="#805030"fontSize="8"fontFamily="'JetBrains Mono'"fontWeight="700">EXHAUST</text>
-      <text x="145"y="52"textAnchor="middle"fill="#604020"fontSize="7"fontFamily="'JetBrains Mono'">Ind. turbos → Y-collect</text>
-      <text x="145"y="63"textAnchor="middle"fill="#604020"fontSize="7"fontFamily="'JetBrains Mono'">→ Critical silencer</text>
+      <rect x="80"y="20"width="160"height="65"fill="#100a00"stroke="#805030"strokeWidth="1.5"rx="2"/>
+      <text x="160"y="44"textAnchor="middle"fill="#805030"fontSize="12"fontFamily="'JetBrains Mono'"fontWeight="700">EXHAUST</text>
+      <text x="160"y="58"textAnchor="middle"fill="#604020"fontSize="10"fontFamily="'JetBrains Mono'">Ind. turbos → Y-collect</text>
+      <text x="160"y="72"textAnchor="middle"fill="#604020"fontSize="10"fontFamily="'JetBrains Mono'">→ Critical silencer</text>
       <path className="fex"d="M140 120 L140 75"markerEnd="url(#aEX)"/>
       {e2&&<path className="fex"d="M280 120 L280 90 L175 75"markerEnd="url(#aEX)"/>}
 
       {/* ── OUTPUT ── */}
-      <rect x="730"y="330"width="140"height="80"fill="#081808"stroke="#20e060"strokeWidth="1.5"rx="2"/>
-      <text x="800"y="352"textAnchor="middle"fill="#20e060"fontSize="12"fontFamily="'JetBrains Mono'"fontWeight="700">OUTPUT</text>
-      <text x="800"y="366"textAnchor="middle"fill="#40c060"fontSize="11"fontFamily="'JetBrains Mono'">{both?"900kW":"450kW"}</text>
-      <text x="800"y="378"textAnchor="middle"fill="#40c060"fontSize="11"fontFamily="'JetBrains Mono'">480V 3φ 60Hz</text>
-      <text x="800"y="390"textAnchor="middle"fill="#40c060"fontSize="11"fontFamily="'JetBrains Mono'">SINGLE CONNECTION POINT</text>
-      <text x="800"y="402"textAnchor="middle"fill="#40c060"fontSize="10"fontFamily="'JetBrains Mono'">Camlocks · ATS port</text>
+      <rect x="730"y="330"width="160"height="95"fill="#081808"stroke="#20e060"strokeWidth="1.5"rx="2"/>
+      <text x="810"y="354"textAnchor="middle"fill="#20e060"fontSize="16"fontFamily="'JetBrains Mono'"fontWeight="700">OUTPUT</text>
+      <text x="810"y="374"textAnchor="middle"fill="#40c060"fontSize="14"fontFamily="'JetBrains Mono'">{both?"900kW":"450kW"}</text>
+      <text x="810"y="390"textAnchor="middle"fill="#40c060"fontSize="14"fontFamily="'JetBrains Mono'">480V 3φ 60Hz</text>
+      <text x="810"y="406"textAnchor="middle"fill="#40c060"fontSize="12"fontFamily="'JetBrains Mono'">SINGLE CONNECTION POINT</text>
+      <text x="810"y="418"textAnchor="middle"fill="#40c060"fontSize="11"fontFamily="'JetBrains Mono'">Camlocks · ATS port</text>
       <path className="fbu"d="M550 330 L550 370 L730 370"markerEnd="url(#aBU)"/>
 
       {/* ── HMI CONTROL ── */}
-      <rect x="730"y="20"width="140"height="90"fill="#080818"stroke="#9040e0"strokeWidth="1.5"rx="2"/>
-      <text x="800"y="40"textAnchor="middle"fill="#9040e0"fontSize="8"fontFamily="'JetBrains Mono'"fontWeight="700">UNIFIED HMI</text>
-      <text x="800"y="53"textAnchor="middle"fill="#602090"fontSize="7"fontFamily="'JetBrains Mono'">Master controller</text>
-      <text x="800"y="64"textAnchor="middle"fill="#602090"fontSize="7"fontFamily="'JetBrains Mono'">PCC3300 × 2 slaves</text>
-      <text x="800"y="75"textAnchor="middle"fill="#602090"fontSize="7"fontFamily="'JetBrains Mono'">Touchscreen 10"</text>
-      <text x="800"y="86"textAnchor="middle"fill="#602090"fontSize="7"fontFamily="'JetBrains Mono'">Single operator view</text>
-      <text x="800"y="97"textAnchor="middle"fill="#602090"fontSize="7"fontFamily="'JetBrains Mono'">IoT · predictive maint.</text>
+      <rect x="730"y="20"width="150"height="100"fill="#080818"stroke="#9040e0"strokeWidth="1.5"rx="2"/>
+      <text x="805"y="44"textAnchor="middle"fill="#9040e0"fontSize="13"fontFamily="'JetBrains Mono'"fontWeight="700">UNIFIED HMI</text>
+      <text x="805"y="59"textAnchor="middle"fill="#602090"fontSize="10"fontFamily="'JetBrains Mono'">Master controller</text>
+      <text x="805"y="71"textAnchor="middle"fill="#602090"fontSize="10"fontFamily="'JetBrains Mono'">PCC3300 × 2 slaves</text>
+      <text x="805"y="83"textAnchor="middle"fill="#602090"fontSize="10"fontFamily="'JetBrains Mono'">Touchscreen 10"</text>
+      <text x="805"y="95"textAnchor="middle"fill="#602090"fontSize="10"fontFamily="'JetBrains Mono'">IoT · predictive maint.</text>
+      <text x="805"y="107"textAnchor="middle"fill="#602090"fontSize="10"fontFamily="'JetBrains Mono'">Remote monitoring</text>
       <path className="fct"d="M730 65 L720 65 L720 360 L730 370"strokeDasharray="4,4"/>
 
       {/* Legend */}
       {[["#f0a010","ENGINE 1"],["#10c8d0","ENGINE 2"],["#3090f0","BUS POWER"],["#c08020","FUEL"],["#20b0b8","COOLANT"],["#805030","EXHAUST"],["#c8c010","CONTROL"]].map(([c,l],i)=>(
-        <g key={i}><line x1={10+i*120}y1={430}x2={36+i*120}y2={430}stroke={c}strokeWidth="2"strokeDasharray="7,3"/>
-        <text x={40+i*120}y={433}fill="#3a6080"fontSize="8"fontFamily="'JetBrains Mono'">{l}</text></g>
+        <g key={i}><line x1={10+i*130}y1={435}x2={36+i*130}y2={435}stroke={c}strokeWidth="2"strokeDasharray="7,3"/>
+        <text x={40+i*130}y={438}fill="#3a6080"fontSize="11"fontFamily="'JetBrains Mono'">{l}</text></g>
       ))}
     </svg>
   );
@@ -376,84 +376,84 @@ function IntSLD({mode}){
         ))}
       </defs>
       {/* Enclosure box */}
-      <rect x="2"y="2"width="680"height="316"fill="none"stroke="#1a3050"strokeWidth="1"strokeDasharray="6,3"rx="3"/>
-      <text x="8"y="18"fill="#4a74a2"fontSize="10"fontFamily="'JetBrains Mono'"letterSpacing="2">DUALCORE 900 — INTERNAL BOUNDARY</text>
+      <rect x="2"y="2"width="710"height="316"fill="none"stroke="#1a3050"strokeWidth="1"strokeDasharray="6,3"rx="3"/>
+      <text x="8"y="22"fill="#4a74a2"fontSize="13"fontFamily="'JetBrains Mono'"letterSpacing="2">DUALCORE 900 — INTERNAL BOUNDARY</text>
 
       {/* E1 generator symbol */}
-      <circle cx="90"cy="100"r="48"fill="#0e1a08"stroke="#f0a010"strokeWidth="2"/>
-      <text x="90"y="93"textAnchor="middle"fill="#f0a010"fontSize="13"fontFamily="'JetBrains Mono'"fontWeight="700">E1</text>
-      <text x="90"y="106"textAnchor="middle"fill="#b08820"fontSize="11"fontFamily="'JetBrains Mono'">450kW</text>
-      <text x="90"y="118"textAnchor="middle"fill="#b08820"fontSize="10"fontFamily="'JetBrains Mono'">N BONDED</text>
+      <circle cx="90"cy="100"r="55"fill="#0e1a08"stroke="#f0a010"strokeWidth="2"/>
+      <text x="90"y="92"textAnchor="middle"fill="#f0a010"fontSize="18"fontFamily="'JetBrains Mono'"fontWeight="700">E1</text>
+      <text x="90"y="108"textAnchor="middle"fill="#b08820"fontSize="14"fontFamily="'JetBrains Mono'">450kW</text>
+      <text x="90"y="122"textAnchor="middle"fill="#b08820"fontSize="12"fontFamily="'JetBrains Mono'">N BONDED</text>
 
       {/* CB1 — internal, factory */}
-      <rect x="62"y="164"width="56"height="30"fill="#1a0e00"stroke="#f0a010"strokeWidth="1.5"rx="1"/>
-      <text x="90"y="176"textAnchor="middle"fill="#f0a010"fontSize="8"fontFamily="'JetBrains Mono'"fontWeight="700">CB1</text>
-      <text x="90"y="187"textAnchor="middle"fill="#20e060"fontSize="6"fontFamily="'JetBrains Mono'">INTERNAL</text>
+      <rect x="62"y="164"width="56"height="32"fill="#1a0e00"stroke="#f0a010"strokeWidth="1.5"rx="1"/>
+      <text x="90"y="177"textAnchor="middle"fill="#f0a010"fontSize="12"fontFamily="'JetBrains Mono'"fontWeight="700">CB1</text>
+      <text x="90"y="189"textAnchor="middle"fill="#20e060"fontSize="10"fontFamily="'JetBrains Mono'">INTERNAL</text>
       <line x1="90"y1="148"x2="90"y2="164"stroke="#f0a010"strokeWidth="3"strokeDasharray="7,4"strokeDashoffset={-off}/>
       <line x1="90"y1="194"x2="90"y2="235"stroke="#f0a010"strokeWidth="3"strokeDasharray="7,4"strokeDashoffset={-off}/>
       <line x1="90"y1="235"x2="310"y2="235"stroke="#f0a010"strokeWidth="3"strokeDasharray="7,4"strokeDashoffset={-off}markerEnd="url(#aE1)"/>
 
       {/* ANSI relays E1 */}
       {[["32",64,162],["25",116,162]].map(([n,x,y])=>(
-        <g key={n}><circle cx={x}cy={y}r="7"fill="#0a0808"stroke="#f0a010"strokeWidth="1"/>
-        <text x={x}y={y+3}textAnchor="middle"fill="#f0a010"fontSize="6"fontFamily="'JetBrains Mono'"fontWeight="700">{n}</text></g>
+        <g key={n}><circle cx={x}cy={y}r="10"fill="#0a0808"stroke="#f0a010"strokeWidth="1"/>
+        <text x={x}y={y+4}textAnchor="middle"fill="#f0a010"fontSize="10"fontFamily="'JetBrains Mono'"fontWeight="700">{n}</text></g>
       ))}
 
       {/* E2 generator symbol */}
-      <circle cx="590"cy="100"r="48"fill="#081a18"stroke={e2?"#10c8d0":"#1a3030"}strokeWidth="2"opacity={e2?1:.3}/>
-      <text x="590"y="93"textAnchor="middle"fill={e2?"#10c8d0":"#1a3030"}fontSize="9"fontFamily="'JetBrains Mono'"fontWeight="700">E2</text>
-      <text x="590"y="106"textAnchor="middle"fill={e2?"#107880":"#0a2828"}fontSize="8"fontFamily="'JetBrains Mono'">450kW</text>
-      <text x="590"y="118"textAnchor="middle"fill={e2?"#107880":"#0a2828"}fontSize="7"fontFamily="'JetBrains Mono'">N ISOLATED</text>
+      <circle cx="590"cy="100"r="55"fill="#081a18"stroke={e2?"#10c8d0":"#1a3030"}strokeWidth="2"opacity={e2?1:.3}/>
+      <text x="590"y="92"textAnchor="middle"fill={e2?"#10c8d0":"#1a3030"}fontSize="18"fontFamily="'JetBrains Mono'"fontWeight="700">E2</text>
+      <text x="590"y="108"textAnchor="middle"fill={e2?"#107880":"#0a2828"}fontSize="14"fontFamily="'JetBrains Mono'">450kW</text>
+      <text x="590"y="122"textAnchor="middle"fill={e2?"#107880":"#0a2828"}fontSize="12"fontFamily="'JetBrains Mono'">N ISOLATED</text>
 
       {/* CB2 — internal */}
-      <rect x="562"y="164"width="56"height="30"fill={e2?"#001a1a":"#0a0a0a"}stroke={e2?"#10c8d0":"#1a3030"}strokeWidth="1.5"rx="1"opacity={e2?1:.4}/>
-      <text x="590"y="176"textAnchor="middle"fill={e2?"#10c8d0":"#1a3030"}fontSize="8"fontFamily="'JetBrains Mono'"fontWeight="700">CB2</text>
-      <text x="590"y="187"textAnchor="middle"fill={e2?"#20e060":"#882020"}fontSize="6"fontFamily="'JetBrains Mono'">{e2?"INTERNAL":""}</text>
+      <rect x="562"y="164"width="56"height="32"fill={e2?"#001a1a":"#0a0a0a"}stroke={e2?"#10c8d0":"#1a3030"}strokeWidth="1.5"rx="1"opacity={e2?1:.4}/>
+      <text x="590"y="177"textAnchor="middle"fill={e2?"#10c8d0":"#1a3030"}fontSize="12"fontFamily="'JetBrains Mono'"fontWeight="700">CB2</text>
+      <text x="590"y="189"textAnchor="middle"fill={e2?"#20e060":"#882020"}fontSize="10"fontFamily="'JetBrains Mono'">{e2?"INTERNAL":""}</text>
       {e2&&<><line x1="590"y1="148"x2="590"y2="164"stroke="#10c8d0"strokeWidth="3"strokeDasharray="7,4"strokeDashoffset={-off}/>
       <line x1="590"y1="194"x2="590"y2="235"stroke="#10c8d0"strokeWidth="3"strokeDasharray="7,4"strokeDashoffset={-off}/>
       <line x1="590"y1="235"x2="372"y2="235"stroke="#10c8d0"strokeWidth="3"strokeDasharray="7,4"strokeDashoffset={-off}markerEnd="url(#aE2)"/></>}
       {e2&&[["32",562,162],["25",618,162]].map(([n,x,y])=>(
-        <g key={n}><circle cx={x}cy={y}r="7"fill="#080a0a"stroke="#10c8d0"strokeWidth="1"/>
-        <text x={x}y={y+3}textAnchor="middle"fill="#10c8d0"fontSize="6"fontFamily="'JetBrains Mono'"fontWeight="700">{n}</text></g>
+        <g key={n}><circle cx={x}cy={y}r="10"fill="#080a0a"stroke="#10c8d0"strokeWidth="1"/>
+        <text x={x}y={y+4}textAnchor="middle"fill="#10c8d0"fontSize="10"fontFamily="'JetBrains Mono'"fontWeight="700">{n}</text></g>
       ))}
 
       {/* INTERNAL BUS */}
-      <rect x="310"y="220"width="62"height="30"fill="#0a1828"stroke="#3090f0"strokeWidth="2"/>
-      <text x="341"y="233"textAnchor="middle"fill="#3090f0"fontSize="7"fontFamily="'JetBrains Mono'"fontWeight="700">INT BUS</text>
-      <text x="341"y="244"textAnchor="middle"fill="#1a3870"fontSize="6"fontFamily="'JetBrains Mono'">480V 2kA</text>
+      <rect x="306"y="220"width="70"height="34"fill="#0a1828"stroke="#3090f0"strokeWidth="2"/>
+      <text x="341"y="235"textAnchor="middle"fill="#3090f0"fontSize="12"fontFamily="'JetBrains Mono'"fontWeight="700">INT BUS</text>
+      <text x="341"y="247"textAnchor="middle"fill="#1a3870"fontSize="10"fontFamily="'JetBrains Mono'">480V 2kA</text>
 
       {/* AUTO-SYNC module inside */}
-      <rect x="290"y="170"width="100"height="36"fill="#080820"stroke="#9040e0"strokeWidth="1.5"rx="2"/>
-      <text x="340"y="184"textAnchor="middle"fill="#9040e0"fontSize="7"fontFamily="'JetBrains Mono'"fontWeight="700">DIGITAL AUTO-SYNC</text>
-      <text x="340"y="196"textAnchor="middle"fill="#602090"fontSize="6"fontFamily="'JetBrains Mono'">Factory calibrated · No trim</text>
-      <text x="340"y="206"textAnchor="middle"fill="#602090"fontSize="6"fontFamily="'JetBrains Mono'">No phase reversal possible</text>
+      <rect x="280"y="165"width="120"height="45"fill="#080820"stroke="#9040e0"strokeWidth="1.5"rx="2"/>
+      <text x="340"y="180"textAnchor="middle"fill="#9040e0"fontSize="12"fontFamily="'JetBrains Mono'"fontWeight="700">DIGITAL AUTO-SYNC</text>
+      <text x="340"y="194"textAnchor="middle"fill="#602090"fontSize="10"fontFamily="'JetBrains Mono'">Factory calibrated · No trim</text>
+      <text x="340"y="206"textAnchor="middle"fill="#602090"fontSize="10"fontFamily="'JetBrains Mono'">No phase reversal возмож.</text>
 
       {/* Bus to output load breaker — outside enclosure */}
       <line x1="372"y1="235"x2="700"y2="235"stroke="#3090f0"strokeWidth="3"strokeDasharray="9,4"strokeDashoffset={-off}markerEnd="url(#aBU)"/>
 
       {/* OUTPUT BREAKER — external */}
-      <rect x="700"y="218"width="64"height="34"fill="#0a1a0a"stroke="#20e060"strokeWidth="1.5"rx="1"/>
-      <text x="732"y="232"textAnchor="middle"fill="#20e060"fontSize="8"fontFamily="'JetBrains Mono'"fontWeight="700">CB-OUT</text>
-      <text x="732"y="244"textAnchor="middle"fill="#20e060"fontSize="7"fontFamily="'JetBrains Mono'">1600A ATS</text>
+      <rect x="700"y="218"width="70"height="38"fill="#0a1a0a"stroke="#20e060"strokeWidth="1.5"rx="1"/>
+      <text x="735"y="234"textAnchor="middle"fill="#20e060"fontSize="12"fontFamily="'JetBrains Mono'"fontWeight="700">CB-OUT</text>
+      <text x="735"y="248"textAnchor="middle"fill="#20e060"fontSize="10"fontFamily="'JetBrains Mono'">1600A ATS</text>
 
       {/* OUTPUT LOADS */}
-      <rect x="764"y="200"width="88"height="70"fill="#081808"stroke="#20e060"strokeWidth="1.5"rx="2"/>
-      <text x="808"y="222"textAnchor="middle"fill="#20e060"fontSize="9"fontFamily="'JetBrains Mono'"fontWeight="700">LOAD</text>
-      <text x="808"y="236"textAnchor="middle"fill="#18a040"fontSize="8"fontFamily="'JetBrains Mono'">{both?"0–900kW":"0–450kW"}</text>
-      <text x="808"y="250"textAnchor="middle"fill="#18a040"fontSize="8"fontFamily="'JetBrains Mono'">{both?"0–1125kVA":"0–563kVA"}</text>
-      <text x="808"y="263"textAnchor="middle"fill="#18a040"fontSize="7"fontFamily="'JetBrains Mono'">Single plug point</text>
+      <rect x="770"y="200"width="100"height="80"fill="#081808"stroke="#20e060"strokeWidth="1.5"rx="2"/>
+      <text x="820"y="222"textAnchor="middle"fill="#20e060"fontSize="14"fontFamily="'JetBrains Mono'"fontWeight="700">LOAD</text>
+      <text x="820"y="238"textAnchor="middle"fill="#18a040"fontSize="12"fontFamily="'JetBrains Mono'">{both?"0–900kW":"0–450kW"}</text>
+      <text x="820"y="253"textAnchor="middle"fill="#18a040"fontSize="12"fontFamily="'JetBrains Mono'">{both?"0–1125kVA":"0–563kVA"}</text>
+      <text x="820"y="268"textAnchor="middle"fill="#18a040"fontSize="10"fontFamily="'JetBrains Mono'">Single plug point</text>
       <line x1="764"y1="235"x2="764"y2="235"stroke="#20e060"strokeWidth="3"strokeDasharray="7,4"strokeDashoffset={-off}markerEnd="url(#aOK)"/>
 
       {/* Neutral management */}
-      <rect x="290"y="268"width="100"height="38"fill="#0e0808"stroke="#f02828"strokeWidth="1"strokeDasharray="2,2"rx="1"/>
-      <text x="340"y="282"textAnchor="middle"fill="#f02828"fontSize="11"fontFamily="'JetBrains Mono'"fontWeight="700">N-G MANAGEMENT</text>
-      <text x="340"y="293"textAnchor="middle"fill="#ad4a4a"fontSize="9"fontFamily="'JetBrains Mono'">E1: bonded. E2: isolated relay.</text>
-      <text x="340"y="303"textAnchor="middle"fill="#ad4a4a"fontSize="9"fontFamily="'JetBrains Mono'">Single field ground point only.</text>
+      <rect x="280"y="268"width="120"height="42"fill="#0e0808"stroke="#f02828"strokeWidth="1"strokeDasharray="2,2"rx="1"/>
+      <text x="340"y="283"textAnchor="middle"fill="#f02828"fontSize="14"fontFamily="'JetBrains Mono'"fontWeight="700">N-G MANAGEMENT</text>
+      <text x="340"y="297"textAnchor="middle"fill="#ad4a4a"fontSize="12"fontFamily="'JetBrains Mono'">E1: bonded. E2: isolated relay.</text>
+      <text x="340"y="310"textAnchor="middle"fill="#ad4a4a"fontSize="12"fontFamily="'JetBrains Mono'">Single field ground point only.</text>
 
       {/* Legend */}
       {[["#f0a010","E1 POWER"],["#10c8d0","E2 POWER"],["#3090f0","BUS"],["#20e060","OUTPUT"],["#9040e0","CONTROL"]].map(([c,l],i)=>(
-        <g key={i}><line x1={10+i*160}y1={313}x2={34+i*160}y2={313}stroke={c}strokeWidth="2"strokeDasharray="7,3"/>
-        <text x={38+i*160}y={316}fill="#3a6080"fontSize="8"fontFamily="'JetBrains Mono'">{l}</text></g>
+        <g key={i}><line x1={10+i*170}y1={313}x2={34+i*170}y2={313}stroke={c}strokeWidth="2"strokeDasharray="7,3"/>
+        <text x={38+i*170}y={316}fill="#3a6080"fontSize="11"fontFamily="'JetBrains Mono'">{l}</text></g>
       ))}
     </svg>
   );
