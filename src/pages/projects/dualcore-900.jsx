@@ -245,7 +245,7 @@ function ArchDiagram({mode}){
   const both=mode==="dual",e2=mode!=="e1only";
 
   return(
-    <svg width="100%"viewBox="0 0 900 440"style={{maxWidth:"100%",minHeight:"260px"}}>
+    <svg width="100%"viewBox="0 0 900 460"style={{maxWidth:"100%",minHeight:"260px"}}>
       <defs>
         {[["aE1","#f0a010"],["aE2","#10c8d0"],["aBU","#3090f0"],["aOK","#20e060"],["aFU","#c08020"],["aCO","#20b0b8"],["aEX","#805030"]].map(([id,c])=>(
           <marker key={id}id={id}markerWidth="6"markerHeight="5"refX="6"refY="2.5"orient="auto"><polygon points="0 0,6 2.5,0 5"fill={c}/></marker>
@@ -255,8 +255,8 @@ function ArchDiagram({mode}){
       </defs>
 
       {/* ── OUTER ENCLOSURE ── */}
+      {/* ENCLOSURE BOUNDARY (LABEL REMOVED) */}
       <rect x="8"y="8"width="884"height="424"fill="none"stroke="#1a3050"strokeWidth="2"strokeDasharray="8,4"rx="4"/>
-      <text x="14"y="24"fill="#1a3050"fontSize="9"fontFamily="'JetBrains Mono'"letterSpacing="3">DUALCORE 900 — INTEGRATED ENCLOSURE BOUNDARY</text>
 
       {/* ── COMMON FUEL SYSTEM (top center) ── */}
       <rect x="350"y="20"width="200"height="60"fill="#0e1808"stroke="#c08020"strokeWidth="1.5"rx="2"/>
@@ -321,7 +321,7 @@ function ArchDiagram({mode}){
           <text x={368+i*38}y={371}textAnchor="middle"fill="#3090f0"fontSize="7"fontFamily="'JetBrains Mono'"fontWeight="700">{n}</text>
         </g>
       ))}
-      <text x="450"y="390"textAnchor="middle"fill="#1a3060"fontSize="7"fontFamily="'JetBrains Mono'">FACTORY WIRED · FACTORY TESTED · FACTORY COORDINATED</text>
+      <text x="450"y="390"textAnchor="middle"fill="#1a3060"fontSize="6"fontFamily="'JetBrains Mono'">FACTORY WIRED · FACTORY TESTED · FACTORY COORDINATED</text>
       {/* Neutral management */}
       <rect x="362"y="396"width="176"height="22"fill="#100808"stroke="#f02828"strokeWidth="1"strokeDasharray="2,2"rx="1"/>
       <text x="450"y="407"textAnchor="middle"fill="#f02828"fontSize="7"fontFamily="'JetBrains Mono'"fontWeight="700">E1 N BONDED · E2 N ISOLATED RELAY</text>
@@ -356,8 +356,8 @@ function ArchDiagram({mode}){
 
       {/* Legend */}
       {[["#f0a010","ENGINE 1"],["#10c8d0","ENGINE 2"],["#3090f0","BUS POWER"],["#c08020","FUEL"],["#20b0b8","COOLANT"],["#805030","EXHAUST"],["#c8c010","CONTROL"]].map(([c,l],i)=>(
-        <g key={i}><line x1={10+i*120}y1={430}x2={36+i*120}y2={430}stroke={c}strokeWidth="2"strokeDasharray="7,3"/>
-        <text x={40+i*120}y={433}fill="#3a6080"fontSize="8"fontFamily="'JetBrains Mono'">{l}</text></g>
+        <g key={i}><line x1={10+i*120}y1={448}x2={36+i*120}y2={448}stroke={c}strokeWidth="2"strokeDasharray="7,3"/>
+        <text x={40+i*120}y={451}fill="#3a6080"fontSize="8"fontFamily="'JetBrains Mono'">{l}</text></g>
       ))}
     </svg>
   );
@@ -425,16 +425,19 @@ function IntSLD({mode}){
       {/* AUTO-SYNC module inside */}
       <rect x="290"y="170"width="100"height="36"fill="#080820"stroke="#9040e0"strokeWidth="1.5"rx="2"/>
       <text x="340"y="184"textAnchor="middle"fill="#9040e0"fontSize="7"fontFamily="'JetBrains Mono'"fontWeight="700">DIGITAL AUTO-SYNC</text>
-      <text x="340"y="196"textAnchor="middle"fill="#602090"fontSize="6"fontFamily="'JetBrains Mono'">Factory calibrated · No trim</text>
-      <text x="340"y="206"textAnchor="middle"fill="#602090"fontSize="6"fontFamily="'JetBrains Mono'">No phase reversal possible</text>
+      <text x="340"y="196"textAnchor="middle"fill="#602090"fontSize="5"fontFamily="'JetBrains Mono'">Factory calibrated · No trim</text>
+      <text x="340"y="206"textAnchor="middle"fill="#602090"fontSize="5"fontFamily="'JetBrains Mono'">No phase reversal possible</text>
 
       {/* Bus to output load breaker — outside enclosure */}
-      <line x1="372"y1="235"x2="700"y2="235"stroke="#3090f0"strokeWidth="3"strokeDasharray="9,4"strokeDashoffset={-off}markerEnd="url(#aBU)"/>
+      <line x1="372"y1="235"x2="685"y2="235"stroke="#3090f0"strokeWidth="3"strokeDasharray="9,4"strokeDashoffset={-off}markerEnd="url(#aBU)"/>
 
-      {/* OUTPUT BREAKER — external */}
-      <rect x="700"y="218"width="64"height="34"fill="#0a1a0a"stroke="#20e060"strokeWidth="1.5"rx="1"/>
-      <text x="732"y="232"textAnchor="middle"fill="#20e060"fontSize="8"fontFamily="'JetBrains Mono'"fontWeight="700">CB-OUT</text>
-      <text x="732"y="244"textAnchor="middle"fill="#20e060"fontSize="7"fontFamily="'JetBrains Mono'">1600A ATS</text>
+      {/* OUTPUT BREAKER — external (moved left for visibility) */}
+      <rect x="685"y="218"width="64"height="34"fill="#0a1a0a"stroke="#20e060"strokeWidth="1.5"rx="1"/>
+      <text x="717"y="232"textAnchor="middle"fill="#20e060"fontSize="8"fontFamily="'JetBrains Mono'"fontWeight="700">CB-OUT</text>
+      <text x="717"y="244"textAnchor="middle"fill="#20e060"fontSize="7"fontFamily="'JetBrains Mono'">1600A ATS</text>
+
+      {/* Connection from CB-OUT to LOAD */}
+      <line x1="749"y1="235"x2="764"y2="235"stroke="#20e060"strokeWidth="3"strokeDasharray="7,4"strokeDashoffset={-off}/>
 
       {/* OUTPUT LOADS */}
       <rect x="764"y="200"width="88"height="70"fill="#081808"stroke="#20e060"strokeWidth="1.5"rx="2"/>
@@ -447,8 +450,8 @@ function IntSLD({mode}){
       {/* Ground / Neutral note */}
       <rect x="290"y="268"width="100"height="38"fill="#0e0808"stroke="#f02828"strokeWidth="1"strokeDasharray="2,2"rx="1"/>
       <text x="340"y="282"textAnchor="middle"fill="#f02828"fontSize="7"fontFamily="'JetBrains Mono'"fontWeight="700">N-G MANAGEMENT</text>
-      <text x="340"y="293"textAnchor="middle"fill="#901818"fontSize="6"fontFamily="'JetBrains Mono'">E1: bonded. E2: isolated relay.</text>
-      <text x="340"y="303"textAnchor="middle"fill="#901818"fontSize="6"fontFamily="'JetBrains Mono'">Single field ground point only.</text>
+      <text x="340"y="293"textAnchor="middle"fill="#901818"fontSize="5"fontFamily="'JetBrains Mono'">E1: bonded. E2: isolated relay.</text>
+      <text x="340"y="303"textAnchor="middle"fill="#901818"fontSize="5"fontFamily="'JetBrains Mono'">Single field ground point only.</text>
 
       {/* Legend */}
       {[["#f0a010","E1 POWER"],["#10c8d0","E2 POWER"],["#3090f0","BUS"],["#20e060","OUTPUT"],["#9040e0","CONTROL"]].map(([c,l],i)=>(
