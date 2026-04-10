@@ -87,70 +87,84 @@ const ClientPortal = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 relative z-10">
-            {myProjects.map((project, i) => (
-              <motion.div
-                key={project.id}
-                initial={{ opacity: 0, scale: 0.98 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: i * 0.2 }}
-                onClick={() => navigate(project.route)}
-                className="folder-card group"
-              >
-                <div className="folder-tab"></div>
-                <div className="folder-texture"></div>
+            {myProjects.length > 0 ? (
+              myProjects.map((project, i) => (
+                <motion.div
+                  key={project.id}
+                  initial={{ opacity: 0, scale: 0.98 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: i * 0.2 }}
+                  onClick={() => navigate(project.route)}
+                  className="folder-card group"
+                >
+                  <div className="folder-tab"></div>
+                  <div className="folder-texture"></div>
 
-                {/* Cinematic Card Header */}
-                <div className="h-48 relative overflow-hidden border-b border-border-dim/50">
-                  <img 
-                    src={project.bg} 
-                    alt={project.title} 
-                    className="w-full h-full object-cover grayscale brightness-25 group-hover:grayscale-0 group-hover:brightness-50 group-hover:scale-110 transition-all duration-1000" 
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-[#1a1a1a]/40 to-transparent"></div>
-                  <div className="absolute top-4 right-4">
-                    <span className="stamped-label">{project.vector}</span>
-                  </div>
-                  <div className="absolute bottom-6 left-8">
-                    <span className="text-[10px] font-mono text-accent-cyan tracking-[0.4em] uppercase font-bold">
-                      {project.subtitle}
-                    </span>
-                  </div>
-                </div>
-
-                <div className="p-6 md:p-10 flex flex-col h-full relative z-10">
-                  <div className="flex justify-between items-start mb-8">
-                    <div className="p-4 bg-black/60 border border-white/10 group-hover:border-accent-red transition-all stealth-shadow">
-                      <project.icon className={`w-10 h-10 ${project.color} group-hover:text-accent-red glow-text-red`} />
+                  {/* Cinematic Card Header */}
+                  <div className="h-48 relative overflow-hidden border-b border-border-dim/50">
+                    <img 
+                      src={project.bg} 
+                      alt={project.title} 
+                      className="w-full h-full object-cover grayscale brightness-25 group-hover:grayscale-0 group-hover:brightness-50 group-hover:scale-110 transition-all duration-1000" 
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-[#1a1a1a]/40 to-transparent"></div>
+                    <div className="absolute top-4 right-4">
+                      <span className="stamped-label">{project.vector}</span>
                     </div>
-                    <div className="flex gap-1.5 mt-2">
-                      <div className="w-1.5 h-1.5 bg-accent-red pulse-red"></div>
-                      <div className="w-1.5 h-1.5 bg-white/10"></div>
-                      <div className="w-1.5 h-1.5 bg-white/10"></div>
+                    <div className="absolute bottom-6 left-8">
+                      <span className="text-[10px] font-mono text-accent-cyan tracking-[0.4em] uppercase font-bold">
+                        {project.subtitle}
+                      </span>
                     </div>
                   </div>
 
-                  <h3 className="text-2xl md:text-4xl font-black text-white group-hover:text-accent-red transition-colors mb-4 tracking-tighter uppercase italic">
-                    {project.title}
-                  </h3>
-                  <p className="text-[11px] text-text-secondary mb-12 leading-relaxed font-mono uppercase tracking-wide opacity-80">
-                    {project.description}
+                  <div className="p-6 md:p-10 flex flex-col h-full relative z-10">
+                    <div className="flex justify-between items-start mb-8">
+                      <div className="p-4 bg-black/60 border border-white/10 group-hover:border-accent-red transition-all stealth-shadow">
+                        <project.icon className={`w-10 h-10 ${project.color} group-hover:text-accent-red glow-text-red`} />
+                      </div>
+                      <div className="flex gap-1.5 mt-2">
+                        <div className="w-1.5 h-1.5 bg-accent-red pulse-red"></div>
+                        <div className="w-1.5 h-1.5 bg-white/10"></div>
+                        <div className="w-1.5 h-1.5 bg-white/10"></div>
+                      </div>
+                    </div>
+
+                    <h3 className="text-2xl md:text-4xl font-black text-white group-hover:text-accent-red transition-colors mb-4 tracking-tighter uppercase italic">
+                      {project.title}
+                    </h3>
+                    <p className="text-[11px] text-text-secondary mb-12 leading-relaxed font-mono uppercase tracking-wide opacity-80">
+                      {project.description}
+                    </p>
+
+                    <div className="mt-auto pt-8 border-t border-white/5 flex justify-between items-center text-white">
+                      <button 
+                        className="bg-accent-red text-white px-6 md:px-10 py-3 text-[11px] font-bold uppercase tracking-[0.4em] flex items-center gap-3 hover:bg-red-800 transition-all relative overflow-hidden group/btn"
+                      >
+                        <div className="absolute inset-0 bg-white/20 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700"></div>
+                        Establish Link <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                      </button>
+                      
+                      <button className="p-3 border border-border-dim hover:border-accent-cyan hover:text-accent-cyan transition-all group/dl bg-white/5">
+                        <Download className="w-5 h-5 group-hover/dl:scale-110 transition-transform" />
+                      </button>
+                    </div>
+                  </div>
+                </motion.div>
+              ))
+            ) : (
+              <div className="col-span-full py-20 text-center border-2 border-dashed border-border-dim/30 bg-white/5">
+                <div className="flex flex-col items-center gap-4">
+                  <ShieldCheck className="w-12 h-12 text-text-dim opacity-20" />
+                  <p className="text-[10px] font-mono text-text-dim uppercase tracking-[0.6em]">
+                    No Strategic Assets Assigned to this Terminal
                   </p>
-
-                  <div className="mt-auto pt-8 border-t border-white/5 flex justify-between items-center text-white">
-                    <button 
-                      className="bg-accent-red text-white px-6 md:px-10 py-3 text-[11px] font-bold uppercase tracking-[0.4em] flex items-center gap-3 hover:bg-red-800 transition-all relative overflow-hidden group/btn"
-                    >
-                      <div className="absolute inset-0 bg-white/20 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700"></div>
-                      Establish Link <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                    </button>
-                    
-                    <button className="p-3 border border-border-dim hover:border-accent-cyan hover:text-accent-cyan transition-all group/dl bg-white/5">
-                      <Download className="w-5 h-5 group-hover/dl:scale-110 transition-transform" />
-                    </button>
-                  </div>
+                  <p className="text-[8px] font-mono text-accent-red uppercase tracking-[0.2em] opacity-60">
+                    Awaiting authorization from Central Command
+                  </p>
                 </div>
-              </motion.div>
-            ))}
+              </div>
+            )}
           </div>
         </section>
 

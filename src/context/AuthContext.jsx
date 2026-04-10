@@ -20,6 +20,12 @@ export const USERS = {
     password: 'Ikickdodos556$',
     role: 'client',
     projects: ['xoi-client']
+  },
+  BABAJOE: {
+    username: 'babajoe1',
+    password: 'Whoisjeff',
+    role: 'client',
+    projects: []
   }
 };
 
