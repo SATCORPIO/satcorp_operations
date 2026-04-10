@@ -141,10 +141,10 @@ function G({ value, min, max, label, unit, size = 92, color = "#e8920a", warn, d
         {arc(-225, 45, "#162438")}{arc(-225, ang, vc)}
         <line x1={cx} y1={cy} x2={tip.x} y2={tip.y} stroke={vc} strokeWidth="1.5" strokeLinecap="round" />
         <circle cx={cx} cy={cy} r="3" fill={vc} />
-        <text x={cx} y={cy + 18} textAnchor="middle" fill={vc} fontSize="15" fontFamily="'JetBrains Mono'" fontWeight="700">{value.toFixed(dec)}</text>
-        <text x={cx} y={cy + 30} textAnchor="middle" fill="#4a7090" fontSize="11" fontFamily="'JetBrains Mono'">{unit}</text>
-        <text x={xy(-225).x - 3} y={xy(-225).y + 12} fill="#304860" fontSize="10" fontFamily="'JetBrains Mono'" textAnchor="middle">{min}</text>
-        <text x={xy(45).x + 3} y={xy(45).y + 12} fill="#304860" fontSize="10" fontFamily="'JetBrains Mono'" textAnchor="middle">{max}</text>
+        <text x={cx} y={cy + 18} textAnchor="middle" fill={vc} fontSize="13" fontFamily="'JetBrains Mono'" fontWeight="700">{value.toFixed(dec)}</text>
+        <text x={cx} y={cy + 28} textAnchor="middle" fill="#4a7090" fontSize="8" fontFamily="'JetBrains Mono'">{unit}</text>
+        <text x={xy(-225).x - 3} y={xy(-225).y + 10} fill="#304860" fontSize="7" fontFamily="'JetBrains Mono'" textAnchor="middle">{min}</text>
+        <text x={xy(45).x + 3} y={xy(45).y + 10} fill="#304860" fontSize="7" fontFamily="'JetBrains Mono'" textAnchor="middle">{max}</text>
       </svg>
       <div className="glbl">{label}</div>
     </div>
@@ -168,9 +168,9 @@ function Scope({ load = 0.75 }) {
         ctx.strokeStyle = p.c; ctx.lineWidth = 1.5; ctx.shadowColor = p.c; ctx.shadowBlur = 3;
         ctx.beginPath(); for (let px = 0; px < W; px++) { const a = (px / W) * 2.5 * 2 * Math.PI + p.o - t.current; ctx.lineTo(px, mid - Math.sin(a) * amp); } ctx.stroke(); ctx.shadowBlur = 0;
       });
-      ph.forEach((p, i) => { ctx.fillStyle = p.c; ctx.font = "bold 11px 'JetBrains Mono'"; ctx.fillText(p.l, W - 90, 18 + i * 16); });
-      ctx.fillStyle = "#304860"; ctx.font = "11px 'JetBrains Mono'";
-      ctx.fillText("60.0 Hz | 2.5 CYC", 10, H - 8); ctx.fillText(`LOAD ${(load * 100).toFixed(0)}%`, W - 70, H - 8);
+      ph.forEach((p, i) => { ctx.fillStyle = p.c; ctx.font = "bold 9px 'JetBrains Mono'"; ctx.fillText(p.l, W - 80, 16 + i * 14); });
+      ctx.fillStyle = "#304860"; ctx.font = "9px 'JetBrains Mono'";
+      ctx.fillText("60.0 Hz | 2.5 CYC", 8, H - 6); ctx.fillText(`LOAD ${(load * 100).toFixed(0)}%`, W - 55, H - 6);
       t.current += .04; fr.current = requestAnimationFrame(draw);
     }; draw(); return () => cancelAnimationFrame(fr.current);
   }, [load]);
@@ -193,19 +193,19 @@ function Phasor({ pf = 0.85 }) {
         const tip = xy(ph); return (
           <g key={i}>
             <defs><marker id={`a${i}`} markerWidth="5" markerHeight="4" refX="5" refY="2" orient="auto"><polygon points="0 0,5 2,0 4" fill={cols[i]} /></marker></defs>
-            <line x1={cx} y1={cy} x2={tip.x} y2={tip.y} stroke={cols[i]} strokeWidth="2.5" markerEnd={`url(#a${i})`} opacity=".9" />
-            <text x={tip.x + (tip.x - cx) * .2} y={tip.y + (tip.y - cy) * .2 + 4} fill={cols[i]} fontSize="12" fontFamily="'JetBrains Mono'" textAnchor="middle">{["L1", "L2", "L3"][i]}</text>
+            <line x1={cx} y1={cy} x2={tip.x} y2={tip.y} stroke={cols[i]} strokeWidth="2" markerEnd={`url(#a${i})`} opacity=".9" />
+            <text x={tip.x + (tip.x - cx) * .2} y={tip.y + (tip.y - cy) * .2 + 3} fill={cols[i]} fontSize="9" fontFamily="'JetBrains Mono'" textAnchor="middle">{["L1", "L2", "L3"][i]}</text>
           </g>);
       })}
       {(() => {
         const tip = xy(pfa); return <>
           <defs><marker id="ac" markerWidth="5" markerHeight="4" refX="5" refY="2" orient="auto"><polygon points="0 0,5 2,0 4" fill="#18c0c8" /></marker></defs>
-          <line x1={cx} y1={cy} x2={tip.x} y2={tip.y} stroke="#18c0c8" strokeWidth="2" strokeDasharray="4,2" markerEnd="url(#ac)" opacity=".7" />
-          <text x={tip.x + 10} y={tip.y} fill="#18c0c8" fontSize="11" fontFamily="'JetBrains Mono'">I(lag)</text>
+          <line x1={cx} y1={cy} x2={tip.x} y2={tip.y} stroke="#18c0c8" strokeWidth="1.5" strokeDasharray="4,2" markerEnd="url(#ac)" opacity=".7" />
+          <text x={tip.x + 8} y={tip.y} fill="#18c0c8" fontSize="8" fontFamily="'JetBrains Mono'">I(lag)</text>
         </>
       })()}
       <path d={`M${cx} ${cy - 20}A20 20 0 0 1${cx + 20 * Math.sin(pfa * Math.PI / 180)} ${cy - 20 * Math.cos(pfa * Math.PI / 180)}`} stroke="#d8c818" strokeWidth="1" fill="none" />
-      <text x={cx + 14} y={cy - 14} fill="#d8c818" fontSize="11" fontFamily="'JetBrains Mono'">φ</text>
+      <text x={cx + 12} y={cy - 12} fill="#d8c818" fontSize="8" fontFamily="'JetBrains Mono'">φ</text>
       <circle cx={cx} cy={cy} r="3" fill="#2888e0" />
     </svg>
   );
@@ -242,12 +242,12 @@ function Flow({ onSel, sel }) {
       {Object.entries(comps).map(([id, c]) => (
         <g key={id} style={{ cursor: "pointer" }} onClick={() => onSel(id === sel ? null : id)}>
           <rect x={c.x} y={c.y} width={c.w} height={c.h} fill={id === sel ? c.c + "ee" : c.c + "88"} stroke={id === sel ? "#e8920a" : "#1a2e44"} strokeWidth={id === sel ? 2 : 1} rx="2" />
-          <text x={c.x + c.w / 2} y={c.y + c.h / 2 - 6} fill={id === sel ? "#fff" : "#b8d0e8"} fontSize="12" fontWeight="700" textAnchor="middle" fontFamily="'JetBrains Mono'">{c.label}</text>
-          <text x={c.x + c.w / 2} y={c.y + c.h / 2 + 10} fill={id === sel ? "#e8920a" : "#3a6080"} fontSize="10" textAnchor="middle" fontFamily="'JetBrains Mono'">{c.sub}</text>
+          <text x={c.x + c.w / 2} y={c.y + c.h / 2 - 5} fill={id === sel ? "#fff" : "#b8d0e8"} fontSize="9" fontWeight="700" textAnchor="middle" fontFamily="'JetBrains Mono'">{c.label}</text>
+          <text x={c.x + c.w / 2} y={c.y + c.h / 2 + 8} fill={id === sel ? "#e8920a" : "#3a6080"} fontSize="7" textAnchor="middle" fontFamily="'JetBrains Mono'">{c.sub}</text>
         </g>
       ))}
       {[["#e8920a", "DIESEL FUEL"], ["#2888e0", "AC POWER"], ["#18c0c8", "COOLANT"], ["#d8c818", "CTRL SIGNAL"], ["#806040", "EXHAUST"]].map(([c, l], i) => (
-        <g key={i}><line x1={15 + i * 168} y1={368} x2={43 + i * 168} y2={368} stroke={c} strokeWidth="2.5" /><text x={47 + i * 168} y={371} fill="#3a6080" fontSize="11" fontFamily="'JetBrains Mono'">{l}</text></g>
+        <g key={i}><line x1={10 + i * 168} y1={368} x2={38 + i * 168} y2={368} stroke={c} strokeWidth="2" /><text x={42 + i * 168} y={371} fill="#3a6080" fontSize="8" fontFamily="'JetBrains Mono'">{l}</text></g>
       ))}
       <text x="445" y="379" fill="#162438" fontSize="8" textAnchor="middle" fontFamily="'JetBrains Mono'" letterSpacing="2">450kW CUMMINS QSX15-G9 — SYSTEM FLOW · CLICK COMPONENT FOR SPECS</text>
     </svg>

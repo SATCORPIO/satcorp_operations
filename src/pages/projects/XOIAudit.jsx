@@ -241,7 +241,7 @@ const XOIAudit = () => {
     <button 
       onClick={exportDecisions}
       disabled={submitting}
-      className={`bg-white text-black px-4 py-2 text-[12px] font-bold uppercase tracking-[0.2em] flex items-center gap-2 hover:bg-slate-200 transition-all stealth-shadow disabled:opacity-50 ${className}`}
+      className={`bg-white text-black px-4 py-2 text-[10px] font-bold uppercase tracking-[0.2em] flex items-center gap-2 hover:bg-slate-200 transition-all stealth-shadow disabled:opacity-50 ${className}`}
     >
       {submitting ? 'Transmitting...' : <><Send className="w-3.5 h-3.5" /> Export Decisions</>}
     </button>
@@ -254,14 +254,14 @@ const XOIAudit = () => {
         {/* HEADER SECTION */}
         <section className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 pb-8 border-b border-border-dim relative overflow-hidden">
           <div>
-            <div className="flex items-center gap-3 text-accent-cyan font-mono text-[12px] uppercase tracking-[0.4em] mb-4">
+            <div className="flex items-center gap-3 text-accent-cyan font-mono text-[10px] uppercase tracking-[0.4em] mb-4">
               <Shield className="w-4 h-4" />
               Strategic Appraisal // Vector XOi
             </div>
             <h1 className="text-3xl md:text-5xl font-black tracking-tighter text-white uppercase italic">
               XOi <span className="text-accent-red glow-text-red">Feature Audit</span>
             </h1>
-            <p className="text-text-secondary font-mono text-[12px] mt-4 uppercase tracking-[0.3em]">
+            <p className="text-text-secondary font-mono text-[10px] mt-4 uppercase tracking-[0.3em]">
               Determine operational viability for subsequent integration phases.
             </p>
           </div>
@@ -273,31 +273,31 @@ const XOIAudit = () => {
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
           <div className="lg:col-span-3 glass-panel p-6 border-l-4 border-accent-cyan flex flex-wrap items-center gap-8">
             <div className="flex flex-col">
-              <span className="text-[12px] font-mono text-text-dim uppercase tracking-widest">Total Assets</span>
+              <span className="text-[10px] font-mono text-text-dim uppercase tracking-widest">Total Assets</span>
               <span className="text-2xl font-black text-white">{stats.total}</span>
             </div>
             <div className="w-[1px] h-8 bg-white/10 hidden sm:block"></div>
             <div className="flex flex-col">
-              <span className="text-[12px] font-mono text-accent-blue uppercase tracking-widest">Future Feature</span>
+              <span className="text-[10px] font-mono text-accent-blue uppercase tracking-widest">Future Feature</span>
               <span className="text-2xl font-black text-accent-blue">{stats.future}</span>
             </div>
             <div className="flex flex-col">
-              <span className="text-[12px] font-mono text-accent-amber uppercase tracking-widest">Add</span>
+              <span className="text-[10px] font-mono text-accent-amber uppercase tracking-widest">Add</span>
               <span className="text-2xl font-black text-accent-amber">{stats.add}</span>
             </div>
             <div className="flex flex-col">
-              <span className="text-[12px] font-mono text-accent-red uppercase tracking-widest">Cut</span>
+              <span className="text-[10px] font-mono text-accent-red uppercase tracking-widest">Cut</span>
               <span className="text-2xl font-black text-accent-red">{stats.cut}</span>
             </div>
             <div className="w-[1px] h-8 bg-white/10 hidden sm:block"></div>
             <div className="flex flex-col">
-              <span className="text-[12px] font-mono text-text-dim uppercase tracking-widest">Unmarked</span>
+              <span className="text-[10px] font-mono text-text-dim uppercase tracking-widest">Unmarked</span>
               <span className="text-2xl font-black text-text-dim">{stats.none}</span>
             </div>
           </div>
 
           <div className="glass-panel p-6 border-l-4 border-white/20 flex flex-col justify-center gap-4">
-             <div className="text-[12px] font-mono text-text-dim uppercase tracking-widest flex items-center gap-2">
+             <div className="text-[10px] font-mono text-text-dim uppercase tracking-widest flex items-center gap-2">
                 <Filter className="w-3 h-3" /> Filter Vector
              </div>
              <div className="flex flex-wrap gap-2">
@@ -305,7 +305,7 @@ const XOIAudit = () => {
                   <button
                     key={f}
                     onClick={() => setFilter(f)}
-                    className={`px-3 py-1.5 text-[11px] font-bold uppercase tracking-wider border transition-all ${
+                    className={`px-3 py-1.5 text-[9px] font-bold uppercase tracking-wider border transition-all ${
                       filter === f 
                       ? 'bg-white/10 border-white text-white' 
                       : 'border-white/5 text-text-dim hover:border-white/20 hover:text-white'
@@ -338,7 +338,7 @@ const XOIAudit = () => {
                 className="space-y-4"
               >
                 <div className="flex items-center gap-6">
-                  <h2 className="text-[13px] font-mono uppercase tracking-[0.5em] text-accent-cyan font-black whitespace-nowrap">
+                  <h2 className="text-[11px] font-mono uppercase tracking-[0.5em] text-accent-cyan font-black whitespace-nowrap">
                     {section.name}
                   </h2>
                   <div className="flex-1 h-[1px] bg-gradient-to-r from-accent-cyan/30 to-transparent"></div>
@@ -362,9 +362,9 @@ const XOIAudit = () => {
                             <h3 className="text-sm font-black text-white uppercase tracking-tight group-hover:text-accent-cyan transition-colors">
                               {feat.name}
                             </h3>
-                            <span className="text-[10px] font-mono text-text-dim opacity-60 uppercase">{feat.id}</span>
+                            <span className="text-[9px] font-mono text-text-dim opacity-40 uppercase">{feat.id}</span>
                           </div>
-                          <p className="text-[13px] text-text-secondary leading-relaxed font-mono uppercase opacity-90">
+                          <p className="text-[11px] text-text-secondary leading-relaxed font-mono uppercase opacity-70">
                             {feat.desc}
                           </p>
                         </div>
@@ -378,7 +378,7 @@ const XOIAudit = () => {
                             <button
                               key={btn.id}
                               onClick={() => handleDecide(feat.id, btn.id)}
-                              className={`flex-1 min-w-[100px] flex items-center justify-center gap-2 py-2 border text-[11px] font-bold uppercase tracking-wider transition-all ${
+                              className={`flex-1 min-w-[100px] flex items-center justify-center gap-2 py-2 border text-[9px] font-bold uppercase tracking-wider transition-all ${
                                 status === btn.id 
                                 ? `${btn.bg} border-transparent text-black shadow-[0_0_20px_rgba(255,255,255,0.2)]` 
                                 : `border-white/10 text-text-dim hover:bg-white/5 hover:text-white`

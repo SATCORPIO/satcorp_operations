@@ -128,9 +128,9 @@ function Synchro({ rate, inSync }) {
         ctx.strokeStyle = i === 0 ? "#22d855" : "#1a3050"; ctx.lineWidth = i === 0 ? 2.5 : 1;
         ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke();
       }
-      ctx.fillStyle = "#22d855"; ctx.font = "bold 11px 'JetBrains Mono'"; ctx.textAlign = "center"; ctx.fillText("SYNC", cx, cy - r + 24);
-      ctx.fillStyle = "#1a3050"; ctx.font = "9px 'JetBrains Mono'";
-      ctx.fillText("FAST →", cx + r - 30, cy + 10); ctx.fillText("← SLOW", cx - r + 30, cy + 10);
+      ctx.fillStyle = "#22d855"; ctx.font = "bold 9px 'JetBrains Mono'"; ctx.textAlign = "center"; ctx.fillText("SYNC", cx, cy - r + 22);
+      ctx.fillStyle = "#1a3050"; ctx.font = "7px 'JetBrains Mono'";
+      ctx.fillText("FAST →", cx + r - 24, cy + 10); ctx.fillText("← SLOW", cx - r + 24, cy + 10);
       ang.current = (ang.current + rate * 0.016) % 360;
       const a = (ang.current - 90) * Math.PI / 180;
       ctx.shadowColor = inSync ? "#22d855" : "#e8920a"; ctx.shadowBlur = inSync ? 15 : 6;
@@ -140,7 +140,7 @@ function Synchro({ rate, inSync }) {
       ctx.shadowBlur = 0; ctx.fillStyle = inSync ? "#22d855" : "#e8920a";
       ctx.beginPath(); ctx.arc(cx, cy, 5, 0, Math.PI * 2); ctx.fill();
       const near = Math.abs(((ang.current + 180) % 360) - 180) < 15;
-      if (near) { ctx.fillStyle = "#22d86080"; ctx.fillRect(0, H - 22, W, 22); ctx.fillStyle = "#22d860"; ctx.font = "bold 11px 'JetBrains Mono'"; ctx.textAlign = "center"; ctx.fillText("◀ CLOSE BREAKER ▶", cx, H - 7); }
+      if (near) { ctx.fillStyle = "#22d86080"; ctx.fillRect(0, H - 18, W, 18); ctx.fillStyle = "#22d860"; ctx.font = "bold 8px 'JetBrains Mono'"; ctx.textAlign = "center"; ctx.fillText("◀ CLOSE BREAKER ▶", cx, H - 5); }
       fr.current = requestAnimationFrame(draw);
     }; draw(); return () => cancelAnimationFrame(fr.current);
   }, [rate, inSync]);
@@ -163,36 +163,36 @@ function SLD({ g2 }) {
       </defs>
 
       {/* GEN 1 */}
-      <circle cx="88" cy="88" r="48" fill="#0e1a0a" stroke="#e8920a" strokeWidth="2" filter="url(#gw1)" />
-      <text x="88" y="80" textAnchor="middle" fill="#e8920a" fontSize="15" fontFamily="'JetBrains Mono'" fontWeight="700">GEN 1</text>
-      <text x="88" y="98" textAnchor="middle" fill="#e8920a" fontSize="12" fontFamily="'JetBrains Mono'">450kW</text>
-      <text x="88" y="112" textAnchor="middle" fill="#6a8060" fontSize="10" fontFamily="'JetBrains Mono'">QSX15-G9</text>
+      <circle cx="88" cy="88" r="44" fill="#0e1a0a" stroke="#e8920a" strokeWidth="2" filter="url(#gw1)" />
+      <text x="88" y="82" textAnchor="middle" fill="#e8920a" fontSize="10" fontFamily="'JetBrains Mono'" fontWeight="700">GEN 1</text>
+      <text x="88" y="96" textAnchor="middle" fill="#e8920a" fontSize="9" fontFamily="'JetBrains Mono'">450kW</text>
+      <text x="88" y="108" textAnchor="middle" fill="#6a8060" fontSize="7" fontFamily="'JetBrains Mono'">QSX15-G9</text>
       {/* CB1 */}
-      <rect x="60" y="152" width="56" height="34" fill="#1a0e00" stroke="#e8920a" strokeWidth="1.5" rx="1" />
-      <text x="88" y="166" textAnchor="middle" fill="#e8920a" fontSize="12" fontFamily="'JetBrains Mono'" fontWeight="700">CB1</text>
-      <text x="88" y="180" textAnchor="middle" fill="#22d855" fontSize="10" fontFamily="'JetBrains Mono'">1200A CLOSED</text>
+      <rect x="60" y="152" width="56" height="30" fill="#1a0e00" stroke="#e8920a" strokeWidth="1.5" rx="1" />
+      <text x="88" y="164" textAnchor="middle" fill="#e8920a" fontSize="8" fontFamily="'JetBrains Mono'" fontWeight="700">CB1</text>
+      <text x="88" y="176" textAnchor="middle" fill="#22d855" fontSize="7" fontFamily="'JetBrains Mono'">1200A CLOSED</text>
       <line x1="88" y1="132" x2="88" y2="152" stroke="#e8920a" strokeWidth="3" strokeDasharray="7,4" strokeDashoffset={-off} />
       {/* ANSI relays */}
       {[["32", 64, 148], ["25", 112, 148]].map(([n, x, y]) => (
-        <g key={n}><circle cx={x} cy={y} r="10" fill="#0a0808" stroke="#e8920a" strokeWidth="1" />
-          <text x={x} y={y + 4} textAnchor="middle" fill="#e8920a" fontSize="10" fontFamily="'JetBrains Mono'" fontWeight="700">{n}</text></g>
+        <g key={n}><circle cx={x} cy={y} r="7" fill="#0a0808" stroke="#e8920a" strokeWidth="1" />
+          <text x={x} y={y + 3} textAnchor="middle" fill="#e8920a" fontSize="6" fontFamily="'JetBrains Mono'" fontWeight="700">{n}</text></g>
       ))}
       <line x1="88" y1="182" x2="88" y2="220" stroke="#e8920a" strokeWidth="3" strokeDasharray="7,4" strokeDashoffset={-off} />
       <line x1="88" y1="220" x2="295" y2="220" stroke="#e8920a" strokeWidth="3" strokeDasharray="7,4" strokeDashoffset={-off} markerEnd="url(#arG1)" />
 
       {/* GEN 2 */}
-      <circle cx="88" cy="310" r="48" fill={run ? "#0a1a1a" : "#0d0d0d"} stroke={run ? "#18c0c8" : "#2a4040"} strokeWidth="2" filter={run ? "url(#gw2)" : ""} />
-      <text x="88" y="302" textAnchor="middle" fill={run ? "#18c0c8" : "#2a5050"} fontSize="15" fontFamily="'JetBrains Mono'" fontWeight="700">GEN 2</text>
-      <text x="88" y="320" textAnchor="middle" fill={run ? "#18c0c8" : "#2a5050"} fontSize="12" fontFamily="'JetBrains Mono'">450kW</text>
-      <text x="88" y="334" textAnchor="middle" fill={run ? "#407080" : "#1a3030"} fontSize="10" fontFamily="'JetBrains Mono'">QSX15-G9</text>
+      <circle cx="88" cy="310" r="44" fill={run ? "#0a1a1a" : "#0d0d0d"} stroke={run ? "#18c0c8" : "#2a4040"} strokeWidth="2" filter={run ? "url(#gw2)" : ""} />
+      <text x="88" y="304" textAnchor="middle" fill={run ? "#18c0c8" : "#2a5050"} fontSize="10" fontFamily="'JetBrains Mono'" fontWeight="700">GEN 2</text>
+      <text x="88" y="318" textAnchor="middle" fill={run ? "#18c0c8" : "#2a5050"} fontSize="9" fontFamily="'JetBrains Mono'">450kW</text>
+      <text x="88" y="330" textAnchor="middle" fill={run ? "#407080" : "#1a3030"} fontSize="7" fontFamily="'JetBrains Mono'">QSX15-G9</text>
       {/* CB2 */}
-      <rect x="60" y="220" width="56" height="34" fill={par ? "#001a1a" : "#0a0a0a"} stroke={par ? "#18c0c8" : "#2a4040"} strokeWidth="1.5" rx="1" />
-      <text x="88" y="234" textAnchor="middle" fill={par ? "#18c0c8" : "#2a5050"} fontSize="12" fontFamily="'JetBrains Mono'" fontWeight="700">CB2</text>
-      <text x="88" y="248" textAnchor="middle" fill={par ? "#22d855" : "#882020"} fontSize="10" fontFamily="'JetBrains Mono'">{par ? "1200A CLOSED" : "OPEN"}</text>
+      <rect x="60" y="220" width="56" height="30" fill={par ? "#001a1a" : "#0a0a0a"} stroke={par ? "#18c0c8" : "#2a4040"} strokeWidth="1.5" rx="1" />
+      <text x="88" y="232" textAnchor="middle" fill={par ? "#18c0c8" : "#2a5050"} fontSize="8" fontFamily="'JetBrains Mono'" fontWeight="700">CB2</text>
+      <text x="88" y="244" textAnchor="middle" fill={par ? "#22d855" : "#882020"} fontSize="7" fontFamily="'JetBrains Mono'">{par ? "1200A CLOSED" : "OPEN"}</text>
       <line x1="88" y1="250" x2="88" y2="266" stroke={par ? "#18c0c8" : "#1a3030"} strokeWidth="3" strokeDasharray={par ? "7,4" : "2,4"} strokeDashoffset={par ? -off : 0} />
       {par && [["32", 64, 248], ["25", 112, 248]].map(([n, x, y]) => (
-        <g key={n}><circle cx={x} cy={y} r="10" fill="#080a0a" stroke="#18c0c8" strokeWidth="1" />
-          <text x={x} y={y + 4} textAnchor="middle" fill="#18c0c8" fontSize="10" fontFamily="'JetBrains Mono'" fontWeight="700">{n}</text></g>
+        <g key={n}><circle cx={x} cy={y} r="7" fill="#080a0a" stroke="#18c0c8" strokeWidth="1" />
+          <text x={x} y={y + 3} textAnchor="middle" fill="#18c0c8" fontSize="6" fontFamily="'JetBrains Mono'" fontWeight="700">{n}</text></g>
       ))}
       <line x1="88" y1="250" x2="88" y2="220" stroke={par ? "#18c0c8" : "#1a3030"} strokeWidth="3" strokeDasharray={par ? "7,4" : "2,4"} strokeDashoffset={par ? -off : 0} />
       <line x1="88" y1="220" x2="295" y2="220" stroke={par ? "#18c0c8" : "#1a3030"} strokeWidth={par ? 3 : 1.5} strokeDasharray={par ? "7,4" : "2,4"} strokeDashoffset={par ? -off : 0} markerEnd={par ? "url(#arG2)" : ""} />
@@ -200,46 +200,45 @@ function SLD({ g2 }) {
       <line x1="88" y1="266" x2="88" y2="266" stroke={par ? "#18c0c8" : "#1a3030"} strokeWidth="3" />
 
       {/* COMMON BUS */}
-      <rect x="295" y="204" width="280" height="40" fill="#0a1828" stroke="#2888e0" strokeWidth="2" />
-      <text x="435" y="220" textAnchor="middle" fill="#58b0ff" fontSize="15" fontFamily="'JetBrains Mono'" fontWeight="700" letterSpacing="1">480V 3φ COMMON BUS</text>
-      <text x="435" y="236" textAnchor="middle" fill="#304870" fontSize="12" fontFamily="'JetBrains Mono'">900kW / 1,125kVA COMBINED STANDBY</text>
+      <rect x="295" y="204" width="250" height="32" fill="#0a1828" stroke="#2888e0" strokeWidth="2" />
+      <text x="420" y="217" textAnchor="middle" fill="#58b0ff" fontSize="9" fontFamily="'JetBrains Mono'" fontWeight="700" letterSpacing="1">480V 3φ COMMON BUS</text>
+      <text x="420" y="230" textAnchor="middle" fill="#304870" fontSize="8" fontFamily="'JetBrains Mono'">900kW / 1,125kVA COMBINED STANDBY</text>
 
       {/* Bus protection */}
-      {/* Bus protection */}
-      <text x="300" y="196" fill="#d8c818" fontSize="11" fontFamily="'JetBrains Mono'">⚡ ANSI 25 SYNC CHECK (EACH CB)</text>
-      <text x="300" y="258" fill="#d8c818" fontSize="11" fontFamily="'JetBrains Mono'">⚡ ANSI 32 REV POWER (EACH MACHINE)</text>
-      <text x="300" y="272" fill="#d8c818" fontSize="11" fontFamily="'JetBrains Mono'">⚡ ANSI 51/50 OC (EACH MACHINE)</text>
+      <text x="297" y="200" fill="#d8c818" fontSize="7" fontFamily="'JetBrains Mono'">⚡ ANSI 25 SYNC CHECK (EACH CB)</text>
+      <text x="297" y="247" fill="#d8c818" fontSize="7" fontFamily="'JetBrains Mono'">⚡ ANSI 32 REV POWER (EACH MACHINE)</text>
+      <text x="297" y="258" fill="#d8c818" fontSize="7" fontFamily="'JetBrains Mono'">⚡ ANSI 51/50 OC (EACH MACHINE)</text>
 
       {/* Neutral bonding note */}
-      <rect x="295" y="284" width="280" height="55" fill="#100808" stroke="#f02828" strokeWidth="1" strokeDasharray="3,2" rx="1" />
-      <text x="435" y="301" textAnchor="middle" fill="#f02828" fontSize="12" fontFamily="'JetBrains Mono'" fontWeight="700">⚠ NEUTRAL BONDING — CRITICAL</text>
-      <text x="435" y="316" textAnchor="middle" fill="#c05050" fontSize="11" fontFamily="'JetBrains Mono'">ONE N-G bond only. Gen 2 neutral floats.</text>
-      <text x="435" y="330" textAnchor="middle" fill="#c05050" fontSize="11" fontFamily="'JetBrains Mono'">PCC3300 handles auto-isolation.</text>
+      <rect x="295" y="264" width="250" height="48" fill="#100808" stroke="#f02828" strokeWidth="1" strokeDasharray="3,2" rx="1" />
+      <text x="420" y="278" textAnchor="middle" fill="#f02828" fontSize="8" fontFamily="'JetBrains Mono'" fontWeight="700">⚠ NEUTRAL BONDING — CRITICAL</text>
+      <text x="420" y="292" textAnchor="middle" fill="#c05050" fontSize="7" fontFamily="'JetBrains Mono'">ONE N-G bond only. Gen 2 neutral floats.</text>
+      <text x="420" y="305" textAnchor="middle" fill="#c05050" fontSize="7" fontFamily="'JetBrains Mono'">PCC3300 paralleling card handles auto-isolation.</text>
 
       {/* Main load breaker */}
-      <rect x="605" y="204" width="70" height="36" fill="#0a1a0a" stroke="#22d855" strokeWidth="1.5" rx="1" />
-      <text x="640" y="219" textAnchor="middle" fill="#22d855" fontSize="12" fontFamily="'JetBrains Mono'" fontWeight="700">CB-L</text>
-      <text x="640" y="233" textAnchor="middle" fill="#22d855" fontSize="10" fontFamily="'JetBrains Mono'">1600A</text>
+      <rect x="595" y="204" width="60" height="32" fill="#0a1a0a" stroke="#22d855" strokeWidth="1.5" rx="1" />
+      <text x="625" y="217" textAnchor="middle" fill="#22d855" fontSize="8" fontFamily="'JetBrains Mono'" fontWeight="700">CB-L</text>
+      <text x="625" y="229" textAnchor="middle" fill="#22d855" fontSize="7" fontFamily="'JetBrains Mono'">1600A</text>
       <line x1="545" y1="220" x2="595" y2="220" stroke="#2888e0" strokeWidth="3" strokeDasharray="7,4" strokeDashoffset={-off} markerEnd="url(#arBus)" />
 
       {/* Load block */}
-      <rect x="675" y="188" width="160" height="85" fill="#081808" stroke="#22d855" strokeWidth="1.5" rx="2" />
-      <text x="755" y="212" textAnchor="middle" fill="#22d855" fontSize="15" fontFamily="'JetBrains Mono'" fontWeight="700">LOAD</text>
-      <text x="755" y="230" textAnchor="middle" fill="#18a840" fontSize="12" fontFamily="'JetBrains Mono'">0–900kW standby</text>
-      <text x="755" y="246" textAnchor="middle" fill="#18a840" fontSize="12" fontFamily="'JetBrains Mono'">0–1,125kVA combined</text>
-      <text x="755" y="262" textAnchor="middle" fill="#18a840" fontSize="12" fontFamily="'JetBrains Mono'">1,354A @ 480V full</text>
+      <rect x="655" y="188" width="142" height="64" fill="#081808" stroke="#22d855" strokeWidth="1.5" rx="2" />
+      <text x="726" y="208" textAnchor="middle" fill="#22d855" fontSize="10" fontFamily="'JetBrains Mono'" fontWeight="700">LOAD</text>
+      <text x="726" y="222" textAnchor="middle" fill="#18a840" fontSize="8" fontFamily="'JetBrains Mono'">0–900kW standby</text>
+      <text x="726" y="236" textAnchor="middle" fill="#18a840" fontSize="8" fontFamily="'JetBrains Mono'">0–1,125kVA combined</text>
+      <text x="726" y="248" textAnchor="middle" fill="#18a840" fontSize="8" fontFamily="'JetBrains Mono'">1,354A @ 480V full</text>
       <line x1="655" y1="220" x2="655" y2="220" stroke="#22d855" strokeWidth="3" strokeDasharray="7,4" strokeDashoffset={-off} markerEnd="url(#arLd)" />
 
       {/* Zone boxes */}
-      <rect x="55" y="58" width="75" height="120" fill="none" stroke="#e8920a" strokeWidth=".5" strokeDasharray="4,4" rx="2" />
-      <text x="58" y="52" fill="#e8920a" fontSize="11" fontFamily="'JetBrains Mono'">ZONE G1</text>
-      {run && <><rect x="55" y="220" width="75" height="100" fill="none" stroke="#18c0c8" strokeWidth=".5" strokeDasharray="4,4" rx="2" />
-        <text x="58" y="214" fill="#18c0c8" fontSize="11" fontFamily="'JetBrains Mono'">ZONE G2</text></>}
+      <rect x="55" y="58" width="68" height="116" fill="none" stroke="#e8920a" strokeWidth=".5" strokeDasharray="4,4" rx="2" />
+      <text x="58" y="55" fill="#e8920a" fontSize="7" fontFamily="'JetBrains Mono'">ZONE G1</text>
+      {run && <><rect x="55" y="220" width="68" height="88" fill="none" stroke="#18c0c8" strokeWidth=".5" strokeDasharray="4,4" rx="2" />
+        <text x="58" y="216" fill="#18c0c8" fontSize="7" fontFamily="'JetBrains Mono'">ZONE G2</text></>}
 
       {/* Legend */}
       {[["#e8920a", "GEN 1"], ["#18c0c8", "GEN 2"], ["#2888e0", "COMBINED BUS"], ["#22d855", "LOAD FEED"]].map(([c, l], i) => (
-        <g key={i}><line x1={10 + i * 220} y1={358} x2={38 + i * 220} y2={358} stroke={c} strokeWidth="2" strokeDasharray="7,3" />
-          <text x={42 + i * 220} y={361} fill="#3a6080" fontSize="11" fontFamily="'JetBrains Mono'">{l}</text></g>
+        <g key={i}><line x1={10 + i * 210} y1={358} x2={38 + i * 210} y2={358} stroke={c} strokeWidth="2" strokeDasharray="7,3" />
+          <text x={42 + i * 210} y={361} fill="#3a6080" fontSize="8" fontFamily="'JetBrains Mono'">{l}</text></g>
       ))}
     </svg>
   );
@@ -259,21 +258,21 @@ function Droop({ d1, d2, load }) {
       <rect x={pad.l} y={pad.t} width={iW} height={iH} fill="#060a0e" stroke="#182838" strokeWidth="1" />
       {[59, 60, 61, 62].map(f => (
         <g key={f}><line x1={pad.l} y1={f2y(f)} x2={pad.l + iW} y2={f2y(f)} stroke="#182838" strokeWidth=".5" />
-          <text x={pad.l - 6} y={f2y(f) + 4} fill="#304060" fontSize="11" fontFamily="'JetBrains Mono'" textAnchor="end">{f}</text></g>
+          <text x={pad.l - 4} y={f2y(f) + 4} fill="#304060" fontSize="8" fontFamily="'JetBrains Mono'" textAnchor="end">{f}</text></g>
       ))}
       {[0, 100, 200, 300, 400, 500].map(k => (
         <g key={k}><line x1={kw2x(k)} y1={pad.t} x2={kw2x(k)} y2={pad.t + iH} stroke="#182838" strokeWidth=".5" />
-          <text x={kw2x(k)} y={H - pad.b + 16} fill="#304060" fontSize="11" fontFamily="'JetBrains Mono'" textAnchor="middle">{k}</text></g>
+          <text x={kw2x(k)} y={H - pad.b + 14} fill="#304060" fontSize="8" fontFamily="'JetBrains Mono'" textAnchor="middle">{k}</text></g>
       ))}
       <line x1={pad.l} y1={f2y(60)} x2={pad.l + iW} y2={f2y(60)} stroke="#1a4030" strokeWidth="1" strokeDasharray="4,4" />
-      <line x1={kw2x(0)} y1={f2y(fnl1)} x2={kw2x(max)} y2={f2y(fnl1 - d1 / 100 * 60)} stroke="#e8920a" strokeWidth="2.5" />
-      <text x={kw2x(10)} y={f2y(fnl1) - 6} fill="#e8920a" fontSize="11" fontFamily="'JetBrains Mono'">G1 {d1}%</text>
-      <line x1={kw2x(0)} y1={f2y(fnl2)} x2={kw2x(max)} y2={f2y(fnl2 - d2 / 100 * 60)} stroke="#18c0c8" strokeWidth="2.5" />
-      <text x={kw2x(10)} y={f2y(fnl2) + 14} fill="#18c0c8" fontSize="11" fontFamily="'JetBrains Mono'">G2 {d2}%</text>
-      <circle cx={kw2x(kw1)} cy={f2y(fo1)} r="6" fill="#e8920a" />
-      <circle cx={kw2x(kw2)} cy={f2y(fo2)} r="6" fill="#18c0c8" />
-      <text x={pad.l + iW / 2} y={H - 4} fill="#3a6080" fontSize="12" fontFamily="'JetBrains Mono'" textAnchor="middle">LOAD (kW per machine)</text>
-      <text x={12} y={pad.t + iH / 2} fill="#3a6080" fontSize="12" fontFamily="'JetBrains Mono'" textAnchor="middle" transform={`rotate(-90,12,${pad.t + iH / 2})`}>FREQ (Hz)</text>
+      <line x1={kw2x(0)} y1={f2y(fnl1)} x2={kw2x(max)} y2={f2y(fnl1 - d1 / 100 * 60)} stroke="#e8920a" strokeWidth="2" />
+      <text x={kw2x(5)} y={f2y(fnl1) - 4} fill="#e8920a" fontSize="8" fontFamily="'JetBrains Mono'">G1 {d1}%</text>
+      <line x1={kw2x(0)} y1={f2y(fnl2)} x2={kw2x(max)} y2={f2y(fnl2 - d2 / 100 * 60)} stroke="#18c0c8" strokeWidth="2" />
+      <text x={kw2x(5)} y={f2y(fnl2) + 12} fill="#18c0c8" fontSize="8" fontFamily="'JetBrains Mono'">G2 {d2}%</text>
+      <circle cx={kw2x(kw1)} cy={f2y(fo1)} r="5" fill="#e8920a" />
+      <circle cx={kw2x(kw2)} cy={f2y(fo2)} r="5" fill="#18c0c8" />
+      <text x={pad.l + iW / 2} y={H - 4} fill="#3a6080" fontSize="8" fontFamily="'JetBrains Mono'" textAnchor="middle">LOAD (kW per machine)</text>
+      <text x={10} y={pad.t + iH / 2} fill="#3a6080" fontSize="8" fontFamily="'JetBrains Mono'" textAnchor="middle" transform={`rotate(-90,10,${pad.t + iH / 2})`}>FREQ (Hz)</text>
     </svg>
   );
 }
